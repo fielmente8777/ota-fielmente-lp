@@ -1,0 +1,183 @@
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer utilities {
+    .no-spinner::-webkit-outer-spin-button,
+    .no-spinner::-webkit-inner-spin-button {
+        @apply appearance-none;
+        margin: 0;
+    }
+
+    .no-spinner {
+        @apply appearance-none;
+    }
+}
+
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+
+:root {
+    scroll-behavior: smooth;
+    font-size: 62.5%;
+    --white: #ffffff;
+    --black: #1d1d1d;
+    --shadow: 0px 0px 20px rgb(153, 152, 152);
+    --primary-orange: #f26633;
+    --gradient: linear-gradient(120deg, #e5f2ef, #e4f2ee, #fffaee) --gradient-second:
+        linear-gradient(120deg, #e5f2ef, #e4f2ee, #ffffff);
+}
+
+body {
+    line-height: 1.5;
+    color: var(--white);
+}
+::-webkit-scrollbar {
+    width: 1rem;
+}
+body::-webkit-scrollbar-thumb {
+    background-color: #1d1768;
+    border-radius: 1rem;
+}
+body::-webkit-scrollbar-track {
+    background-color: #ffffff;
+    border: 1px solid #1d1768;
+    border-radius: 1rem;
+    margin-block: 0.25rem;
+}
+
+.bg-gradient {
+    // background: var(--gradient)
+    background: linear-gradient(180deg, #e5f2ef, #e4f2ee, #fffaee, #ffffff);
+}
+
+.bg-gradient-second {
+    // background: var(--gradient-second)
+    background: linear-gradient(#ffffff, #ecf2fb, #e4f2ee);
+}
+
+// .order-chanhg{
+//     order: -1;
+// }
+.max-width {
+    max-width: 1280px;
+    width: 100%;
+    margin-inline: auto;
+    @media (width<=1280px) {
+        padding: 0 2.5rem;
+    }
+}
+
+.service-card {
+    perspective: 1000px;
+}
+
+.icon-container {
+    transition: transform 0.3s ease;
+}
+
+.service-card:hover .icon-container {
+    transform: translateZ(70px);
+}
+
+.font-roboto {
+    font-family: "Roboto", sans-serif;
+}
+
+.box-shadow {
+    box-shadow: 1.5px 6px #1d1768;
+    &:active {
+        box-shadow: 0;
+    }
+}
+
+.btn-shadow {
+    box-shadow: 1px 5px #ffffff;
+
+    &:active {
+        box-shadow: none;
+        transform: translateY(3px);
+    }
+}
+.btn-shadow-2 {
+    box-shadow: 1px 5px #1d1768;
+
+    &:active {
+        box-shadow: none;
+        transform: translateY(3px);
+    }
+}
+
+
+.shadow-btn {
+    box-shadow: 2px 2px #1d1768;
+    &:active {
+        box-shadow: none;
+        transform: translateY(3px);
+    }
+}
+.shadow-btn-2 {
+    box-shadow: 2px 2px #ffffff;
+    &:active {
+        box-shadow: none;
+        transform: translateY(3px);
+    }
+}
+.banner-slide-btn {
+    box-shadow: 4px 5px #1d1768;
+    &:active {
+        box-shadow: none;
+        transform: translateY(3px);
+    }
+}
+
+.bg-img {
+    background-image: url("/images/landingPage/Vector.png");
+    background-position: 460.86px 80px;
+    background-repeat: no-repeat;
+    background-size: 90px 60px;
+    @media (width<=768px) {
+        background-image: none;
+    }
+    // position: relative;
+}
+// .bg-img::before {
+//     content: ""; /* Create a pseudo-element */
+//     position: absolute;
+//     top: 0;
+//     left: 0;
+//     width: 100%;
+//     height: 100%;
+//     background-image: url("/images/landingPage/Vector.png");
+//     background-position: 450.86px 58px;
+//     background-repeat: no-repeat;
+//     background-size: 90px 60px;
+//     transform: rotate(12deg);
+//     @media (width<=768px) {
+//         background-image: none;
+//     } /* Rotate the pseudo-element */
+// }
+.Agency-img {
+    background-image: url("/images/landingPage/bottomline.png");
+    background-position: 50% 99%;
+    background-repeat: no-repeat;
+    background-size: contain;
+    @media (width>=768px) {
+        background-image: none;
+    }
+}
+
+// landing page4 css starts here
+
+.button_box_shadow {
+    box-shadow:
+        0px 63px 18px 0px rgba(0, 0, 0, 0),
+        0px 41px 16px 0px rgba(0, 0, 0, 0.04),
+        0px 23px 14px 0px rgba(0, 0, 0, 0.13),
+        0px 10px 10px 0px rgba(0, 0, 0, 0.21),
+        0px 3px 6px 0px rgba(0, 0, 0, 0.25);
+    &:active {
+        box-shadow: none;
+        transform: translateY(3px);
+    }
+}
