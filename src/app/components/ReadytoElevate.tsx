@@ -2,83 +2,91 @@
 import Section from "@/app/components/Section";
 import { countries } from "@/utils/countryCode";
 import { useState } from "react";
+import axios from "axios";
 
 const ReadytoElevate = () => {
-  const host = ""; //********update this
-  const [fullName, setFullName] = useState("");
+  const host = "https://nexon.eazotel.com/eazotel/addEazotelClientQuery"; //********update this
+  const [formData, setFormData] = useState({
+    fullName: "",
+    countryCode: "+91", // Defaulting to India's code
+    phone: "",
+    email: "",
+    hotelName: "",
+    location: "",
+    numberOfProperties: "",
+  });
 
-  const [countryCode, setCountryCode] = useState("+91");
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>
+  ) => {
+    const { name, value } = e.target;
+    setFormData((prevData) => ({
+      ...prevData,
+      [name]: value,
+    }));
+  };
 
-  const [phone, setPhone] = useState("");
-
-  const [email, setEmail] = useState("");
-
-  const [hotelName, setHotelName] = useState("");
-
-  const [location, setLocation] = useState("");
-
-  const [numberOfProperties, setNoOfProperties] = useState("");
+  const handlePhoneChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const enteredValue = e.target.value.replace(/\D/g, "");
+    const truncatedValue = enteredValue.slice(0, 10);
+    setFormData((prevData) => ({
+      ...prevData,
+      phone: truncatedValue,
+    }));
+  };
 
   const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
 
-    const body = {
-      fullName: fullName,
+    const {
+      fullName,
+      phone,
+      email,
+      hotelName,
+      location,
+      numberOfProperties,
+      countryCode,
+    } = formData;
 
-      Number: phone,
-
-      Email: email,
-
-      Business_Name: hotelName,
-
-      location: location,
-
-      numberOfProperties: numberOfProperties,
-
-      countryCode: countryCode,
-    };
-
-    setFullName("");
-
-    setHotelName("");
-
-    setEmail("");
-
-    setPhone("");
-
-    setLocation("");
-
-    setNoOfProperties("");
-
-    setCountryCode("+91");
+    // console.log(
+    //   fullName,
+    //   email,
+    //   phone,
+    //   hotelName,
+    //   location,
+    //   numberOfProperties,
+    //   countryCode
+    // );
 
     try {
-      const response = await fetch(host, {
-        method: "POST",
-
-        headers: {
-          Accept: "application/json, text/plain, */*",
-
-          "Content-Type": "application/json",
-        },
-
-        body: JSON.stringify(body),
+      const response = await axios.post(host, {
+        fullName,
+        Number: phone,
+        Email: email,
+        Business_Name: hotelName,
+        location,
+        numberOfProperties,
+        countryCode,
       });
 
-      if (response.ok) {
+      if (response.status === 200) {
         console.log("Form submitted successfully!");
+        setFormData({
+          fullName: "",
+          countryCode: "+91", // Resetting to India's code
+          phone: "",
+          email: "",
+          hotelName: "",
+          location: "",
+          numberOfProperties: "",
+        });
       } else {
         console.log("An error occurred. Please try again later.");
       }
     } catch (error) {
       console.log("Error:", error);
-
       console.log("An error occurred. Please try again later.");
     }
-  };
-
-  const getShortCountryName = (name: string) => {
-    return name.slice(0, 2).toUpperCase();
   };
 
   return (
@@ -96,26 +104,31 @@ const ReadytoElevate = () => {
             </p>
           </div>
           <div className="flex items-center lg:justify-end justify-center">
-            <form className="flex flex-col gap-4 p-6 border border-blue-sky rounded-2xl shadow-xl max-w-5xl">
+            <form
+              className="flex flex-col gap-4 p-6 border border-blue-sky rounded-2xl shadow-xl max-w-5xl"
+              onSubmit={handleSubmit}
+            >
               <div>
                 <label
-                  htmlFor="name"
+                  htmlFor="fullName"
                   className="text-blue-sky text-xl font-medium"
                 >
                   Full Name
                 </label>
                 <input
-                  id="name"
+                  id="fullName"
+                  name="fullName"
                   type="text"
                   placeholder="Pranav"
-                  value={fullName}
-                  onChange={(e) => setFullName(e.target.value)}
+                  required
+                  value={formData.fullName}
+                  onChange={handleChange}
                   className="rounded-md px-5 py-2 text-xl placeholder:text-[#5E5E5E40] text-black bg-[#E8E8E8] w-full outline-none focus:outline-none"
                 />
               </div>
               <div>
                 <label
-                  htmlFor="Phone"
+                  htmlFor="phone"
                   className="text-blue-sky text-xl font-medium"
                 >
                   Phone
@@ -123,12 +136,11 @@ const ReadytoElevate = () => {
                 <div className="flex gap-2">
                   <div>
                     <select
-                      id="country"
-                      required
-                      name="country"
-                      //   value={countryCode}
-                      //   onChange={(e) => setCountryCode(e.target.value)}
-                      className="flex w-40 gap-1 justify-between px-2 py-4 text-xl focus:outline-none leading-5 bg-gray-200 rounded-lg text-[#333333] "
+                      id="countryCode"
+                      name="countryCode"
+                      value={formData.countryCode}
+                      onChange={handleChange}
+                      className="flex w-28 gap-1 justify-between px-2 py-4 text-xl focus:outline-none leading-5 bg-gray-200 rounded-lg text-[#333333]"
                     >
                       {countries.map((country, index) => (
                         <option
@@ -136,96 +148,97 @@ const ReadytoElevate = () => {
                           value={country.code}
                           className="text-black bg-gray-200"
                         >
-                          {`${getShortCountryName(country.name)}(${
-                            country.code
-                          })`}
+                          {`${country.code}`}
                         </option>
                       ))}
                     </select>
                   </div>
                   <input
                     type="number"
-                    id="Phone"
-                    pattern="[0-9]*"
+                    id="phone"
+                    name="phone"
+                    required
                     placeholder="99999-99999"
-                    value={phone}
+                    value={formData.phone}
                     className="rounded-md px-5 py-2 text-xl placeholder:text-[#5E5E5E40] no-spinner text-black bg-[#E8E8E8] w-full focus:outline-none"
-                    onChange={(e) => {
-                      const enteredValue = e.target.value.replace(/\D/g, "");
-                      const truncatedValue = enteredValue.slice(0, 10);
-                      setPhone(truncatedValue);
-                    }}
+                    onChange={handlePhoneChange}
                   />
                 </div>
               </div>
               <div>
                 <label
-                  htmlFor="Email"
+                  htmlFor="email"
                   className="text-blue-sky text-xl font-medium"
                 >
                   Email
                 </label>
                 <input
                   type="email"
-                  id="Email"
+                  id="email"
+                  name="email"
+                  required
                   placeholder="k&khotels@gmail.com"
-                  value={email}
-                  onChange={(e) => setEmail(e.target.value)}
+                  value={formData.email}
+                  onChange={handleChange}
                   className="rounded-md px-5 py-2 text-xl placeholder:text-[#5E5E5E40] text-black bg-[#E8E8E8] w-full focus:outline-none"
                 />
               </div>
               <div>
                 <label
-                  htmlFor="Hotel-Name"
+                  htmlFor="hotelName"
                   className="text-blue-sky text-xl font-medium"
                 >
                   Hotel Name
                 </label>
                 <input
                   type="text"
-                  id="Hotel-Name"
+                  id="hotelName"
+                  name="hotelName"
                   placeholder="K&K Hotels"
-                  value={hotelName}
-                  onChange={(e) => setHotelName(e.target.value)}
+                  value={formData.hotelName}
+                  required
+                  onChange={handleChange}
                   className="rounded-md px-5 py-2 text-xl placeholder:text-[#5E5E5E40] text-black bg-[#E8E8E8] w-full focus:outline-none"
                 />
               </div>
               <div>
                 <label
-                  htmlFor="Location"
+                  htmlFor="location"
                   className="text-blue-sky text-xl font-medium"
                 >
                   Location
                 </label>
                 <input
                   type="text"
-                  id="Location"
+                  id="location"
+                  name="location"
                   placeholder="Chandigarh"
-                  value={location}
-                  onChange={(e) => setLocation(e.target.value)}
+                  value={formData.location}
+                  onChange={handleChange}
                   className="rounded-md px-5 py-2 text-xl placeholder:text-[#5E5E5E40] text-black bg-[#E8E8E8] w-full focus:outline-none"
                 />
               </div>
               <div>
                 <label
-                  htmlFor="properties"
+                  htmlFor="numberOfProperties"
                   className="text-blue-sky text-xl font-medium"
                 >
                   Number of properties
                 </label>
                 <input
-                  id="properties"
+                  id="numberOfProperties"
+                  name="numberOfProperties"
                   type="number"
                   placeholder="10"
-                  value={numberOfProperties}
-                  onChange={(e) => setNoOfProperties(e.target.value)}
+                  value={formData.numberOfProperties}
+                  onChange={handleChange}
                   className="rounded-md px-5 py-2 text-xl no-spinner placeholder:text-[#5E5E5E40] text-black bg-[#E8E8E8] w-full focus:outline-none"
                 />
               </div>
               <div>
                 <button
-                  className="inline-flex items-center text-xl mt-3 justify-center px-8 py-4 font-sans font-semibold tracking-wide text-white bg-blue-dark rounded-lg w-full hover:bg-blue-dark/70 transition-colors duration-300 ease-in-out
-                "
+                  type="submit"
+                  className="inline-flex items-center text-xl mt-3 justify-center px-8 py-4 font-sans font-semibold tracking-wide text-white bg-blue-dark rounded-lg w-full hover:bg-blue-dark/70 transition-colors duration-300 ease-in-out"
                 >
                   Schedule Call
                 </button>

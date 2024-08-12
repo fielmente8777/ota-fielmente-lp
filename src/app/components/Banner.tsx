@@ -21,7 +21,7 @@ const Banner: React.FC = () => {
             </h1>
             <Link
               href="#ScheduleCall"
-              className="flex items-center w-max text-blue-sky hover:bg-blue-sky hover:text-white bg-white transition duration-300 ease-in-out border border-white rounded-full lg:text-xl text-[1rem] font-semibold button_box_shadow md:px-6 px-4 md:py-4 py-3"
+              className="flex items-center w-max text-blue-sky hover:bg-blue-sky/10 hover:text-white bg-white transition duration-300 ease-in-out border border-white rounded-full lg:text-xl text-[1rem] font-semibold button_box_shadow md:px-6 px-4 md:py-4 py-3"
             >
               Schedule Call
             </Link>

@@ -20,10 +20,12 @@ const Footer = () => {
             >
               <OutLineLocationIcon />
             </span>
-            Level 2, Augusta Point, Golf Course Rd, Parsvnath Exotica, Sarswati
+            {/* Level 2, Augusta Point, Golf Course Rd, Parsvnath Exotica, Sarswati
             Kunj II, DLF Phase 5,
             <br className="hidden lg:block" /> Sector 53,
-            Gurugram, Haryana 122002
+            Gurugram, Haryana 122002 */}
+            Suncity Success Tower, Golf Course Ext Rd, Sector 65, Gurugram, Haryana 122005
+
           </p>
           <Link
             href={`mailto:sachin@fielmente.com`}

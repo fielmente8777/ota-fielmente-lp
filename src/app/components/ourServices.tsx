@@ -27,7 +27,7 @@ const OurServices: React.FC = () => {
                   {item.icon}
                 </div>
               </div>
-              <h3 className="lg:text-3xl text-lg group text-black">{item.title}</h3>
+              <h3 className="lg:text-xl text-lg group text-[#333] lg:pe-24">{item.title}</h3>
             </div>
           ))}
         </div>
@@ -40,11 +40,11 @@ export default OurServices;
 
 const data = [
   {
-    title: "Online Reputation Management",
+    title: "Online Reputation   Management",
     icon: <OnlineReputationManagement />,
   },
   {
-    title: "Website Development/Optimization",
+    title: "Website Development/ Optimization",
     icon: <WebsiteDevelopmentOptimization />,
   },
   {
@@ -60,7 +60,7 @@ const data = [
     icon: <OnlineTravelAgencyOptimization />,
   },
   {
-    title: "Search Engine Optimization/ Marketing",
+    title: "Search Engine  Optimization/ Marketing",
     icon: <SearchEngineOptimizationMarketing />,
   },
   {
