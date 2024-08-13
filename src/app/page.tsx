@@ -1,5 +1,5 @@
 import React from "react";
-import { Banner, Supercharge, WhatWeOffer, RevenueManagement, OurServices, RevenueServices, Workstructure, OurOTAPartners, ReadytoElevate } from "./components";
+import { Banner, Supercharge, WhatWeOffer, RevenueManagement, OurServices, RevenueServices, Workstructure, OurOTAPartners, ReadytoElevate, PopupForm } from "./components";
 const page: React.FC = () => {
   return (
     <>
@@ -12,6 +12,7 @@ const page: React.FC = () => {
       <Workstructure/>
       <OurOTAPartners/>
       <ReadytoElevate/>
+      <PopupForm/>
     </>
   );
 };

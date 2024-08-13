@@ -7,6 +7,7 @@ import RevenueServices from "./RevenueServices";
 import Workstructure from './Workstructure';
 import OurOTAPartners from './OurOTAPartners';
 import ReadytoElevate from './ReadytoElevate';
+import PopupForm from "./PopupForm";
 
 export {
   Banner,
@@ -17,5 +18,6 @@ export {
   RevenueServices,
   Workstructure,
   OurOTAPartners,
-  ReadytoElevate
+  ReadytoElevate,
+  PopupForm
 };

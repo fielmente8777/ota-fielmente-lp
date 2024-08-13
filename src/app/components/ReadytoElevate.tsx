@@ -3,9 +3,13 @@ import Section from "@/app/components/Section";
 import { countries } from "@/utils/countryCode";
 import { useState } from "react";
 import axios from "axios";
+import { useRouter } from "next/navigation";
 
 const ReadytoElevate = () => {
+  const router = useRouter();
+
   const host = "https://nexon.eazotel.com/eazotel/addEazotelClientQuery"; //********update this
+  
   const [formData, setFormData] = useState({
     fullName: "",
     countryCode: "+91", // Defaulting to India's code
@@ -71,6 +75,7 @@ const ReadytoElevate = () => {
 
       if (response.status === 200) {
         console.log("Form submitted successfully!");
+        router.push("/thank-you");
         setFormData({
           fullName: "",
           countryCode: "+91", // Resetting to India's code
@@ -82,10 +87,11 @@ const ReadytoElevate = () => {
         });
       } else {
         console.log("An error occurred. Please try again later.");
+        alert("An error. Please try again later");
       }
     } catch (error) {
       console.log("Error:", error);
-      console.log("An error occurred. Please try again later.");
+      alert("An error occurred. Please try again later.");
     }
   };
 
