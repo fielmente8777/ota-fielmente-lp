@@ -13,6 +13,28 @@ export const metadata: Metadata = {
   title: "Fielmente : Hotel Marketing Agency in India",
   description:
     "Best marketing agency in India for hotels, resorts and restaurant",
+  keywords:
+    "hotel marketing agency, hotel marketing agency in India, Ota hotel marketing agency,",
+  authors: [{ name: "Fielmente", url: "https://ota.fielmente.com/" }],
+  alternates: {
+    canonical: "https://ota.fielmente.com/",
+  },
+  openGraph: {
+    title: "Fielmente : Hotel Marketing Agency in India",
+    description:
+      "Best marketing agency in India for hotels, resorts and restaurant",
+    url: "https://ota.fielmente.com/",
+    images: [
+      {
+        url: "https://ota.fielmente.com/og-image.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Fielmente : Hotel Marketing Agency in",
+      },
+    ],
+    type: "website",
+    locale: "en-US",
+  },
 };
 
 export default function RootLayout({
@@ -23,7 +45,10 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
-      <meta name="google-site-verification" content="vKQyk75wG0kfB4x60GCRAmVeErtPS9rgcM9-YNRAvLw" />
+        <meta
+          name="google-site-verification"
+          content="vKQyk75wG0kfB4x60GCRAmVeErtPS9rgcM9-YNRAvLw"
+        />
         {/* <!-- Google Tag Manager --> */}
         {/* <Script
           id="google-tag-manager"

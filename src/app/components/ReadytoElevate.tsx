@@ -9,9 +9,10 @@ const ReadytoElevate = () => {
   const router = useRouter();
 
   const host = "https://nexon.eazotel.com/eazotel/addEazotelClientQuery"; //********update this
-  
+
   const [formData, setFormData] = useState({
     fullName: "",
+    // countryCode: "+91", // Defaulting to India's code
     countryCode: "+91", // Defaulting to India's code
     phone: "",
     email: "",
@@ -146,13 +147,14 @@ const ReadytoElevate = () => {
                       name="countryCode"
                       value={formData.countryCode}
                       onChange={handleChange}
-                      className="flex w-28 gap-1 justify-between px-2 py-4 text-xl focus:outline-none leading-5 bg-gray-200 rounded-lg text-[#333333]"
+                      className="flex justify-between text-center py-4 text-xl focus:outline-none bg-gray-200 rounded-lg text-[#333333]"
+                      style={{ inlineSize: `${formData.countryCode.length + 2}ch` }}
                     >
                       {countries.map((country, index) => (
                         <option
                           key={index}
                           value={country.code}
-                          className="text-black bg-gray-200"
+                          className="text-black bg-gray-200 p-0"
                         >
                           {`${country.code}`}
                         </option>
@@ -207,7 +209,7 @@ const ReadytoElevate = () => {
                   className="rounded-md px-5 py-2 text-xl placeholder:text-[#5E5E5E40] text-black bg-[#E8E8E8] w-full focus:outline-none"
                 />
               </div>
-              <div>
+              {/* <div>
                 <label
                   htmlFor="location"
                   className="text-blue-sky text-xl font-medium"
@@ -223,8 +225,8 @@ const ReadytoElevate = () => {
                   onChange={handleChange}
                   className="rounded-md px-5 py-2 text-xl placeholder:text-[#5E5E5E40] text-black bg-[#E8E8E8] w-full focus:outline-none"
                 />
-              </div>
-              <div>
+              </div> */}
+              {/* <div>
                 <label
                   htmlFor="numberOfProperties"
                   className="text-blue-sky text-xl font-medium"
@@ -240,7 +242,7 @@ const ReadytoElevate = () => {
                   onChange={handleChange}
                   className="rounded-md px-5 py-2 text-xl no-spinner placeholder:text-[#5E5E5E40] text-black bg-[#E8E8E8] w-full focus:outline-none"
                 />
-              </div>
+              </div> */}
               <div>
                 <button
                   type="submit"

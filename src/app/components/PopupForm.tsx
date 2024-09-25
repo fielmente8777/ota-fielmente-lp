@@ -26,7 +26,7 @@ const PopupForm = () => {
     intervalIdRef.current = setInterval(() => {
       setShowModal(true);
       document.body.style.overflow = "hidden";
-    }, 1000);
+    }, 60000);
 
     // Cleanup the interval when the component unmounts or modal is closed
     return () => {
@@ -118,7 +118,7 @@ const PopupForm = () => {
   return (
     <>
       {showModal && (
-        <section className="absolute w-full h-screen bg-black bg-opacity-70 top-0 left-0">
+        <section className="fixed w-full h-screen bg-black bg-opacity-70 top-0 left-0 z-50">
           <article className="flex justify-center items-center h-full">
             <div className="flex flex-col gap-3 max-w-[400px] border shadow-2xl p-4 relative rounded-md bg-white">
               <button
@@ -127,7 +127,7 @@ const PopupForm = () => {
               >
                 X
               </button>
-              <div className="relative w-full lg:h-[300px] h-40 aspect-[4/3]">
+              <div className="relative w-full h-[300px] aspect-[4/4]">
                 <Image
                   src={popupimg}
                   alt="Hospitality Marketing"
@@ -141,7 +141,7 @@ const PopupForm = () => {
                 onSubmit={submit}
               >
                 {form.map((item, index) => (
-                  <div className="px-2 py-3 border" key={index}>
+                  <div className="px-2 py-3 border border-sky-400 rounded-lg" key={index}>
                     <input
                       type={item.type}
                       placeholder={item.placeholder}
@@ -152,7 +152,7 @@ const PopupForm = () => {
                     />
                   </div>
                 ))}
-                <div className="px-2 py-3 border">
+                <div className="px-2 py-3 border border-sky-400 rounded-lg">
                   <textarea
                     placeholder="Message"
                     value={userMessage}
@@ -163,7 +163,7 @@ const PopupForm = () => {
                 <div>
                   <button
                     type="submit"
-                    className="bg-blue-sky hover:bg-blue-sky/90 transition w-full py-3 flex-auto flex justify-center items-center text-lg rounded-lg"
+                    className="bg-blue-sky hover:bg-sky-800 transition w-full py-3 flex-auto flex justify-center items-center text-lg rounded-lg"
                   >
                     Submit
                   </button>
