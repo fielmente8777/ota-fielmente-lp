@@ -53,26 +53,34 @@ const ReadytoElevate = () => {
       countryCode,
     } = formData;
 
-    // console.log(
-    //   fullName,
-    //   email,
-    //   phone,
-    //   hotelName,
-    //   location,
-    //   numberOfProperties,
-    //   countryCode
-    // );
-
     try {
-      const response = await axios.post(host, {
-        fullName,
-        Number: phone,
-        Email: email,
-        Business_Name: hotelName,
-        location,
-        numberOfProperties,
-        countryCode,
-      });
+      // const response = await axios.post(host, {
+      //   fullName,
+      //   Number: phone,
+      //   Email: email,
+      //   Business_Name: hotelName,
+      //   location,
+      //   numberOfProperties,
+      //   countryCode,
+      // });
+      const response = await axios.post(
+        // `https://www.privyr.com/api/v1/incoming-leads/0vZfjMQw/e6KjRouX#generic-webhook`,
+        `https://www.privyr.com/api/v1/incoming-leads/0vZfjMQw/7lHAUjtz#generic-webhook`,
+        {
+          fullName,
+          Number: phone,
+          Email: email,
+          Business_Name: hotelName,
+          location,
+          numberOfProperties,
+          countryCode,
+        },
+        {
+          headers: {
+            "Content-Type": "application/json",
+          },
+        }
+      );
 
       if (response.status === 200) {
         console.log("Form submitted successfully!");
@@ -148,7 +156,9 @@ const ReadytoElevate = () => {
                       value={formData.countryCode}
                       onChange={handleChange}
                       className="flex justify-between text-center py-4 text-xl focus:outline-none bg-gray-200 rounded-lg text-[#333333]"
-                      style={{ inlineSize: `${formData.countryCode.length + 2}ch` }}
+                      style={{
+                        inlineSize: `${formData.countryCode.length + 2}ch`,
+                      }}
                     >
                       {countries.map((country, index) => (
                         <option

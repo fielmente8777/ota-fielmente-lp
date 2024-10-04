@@ -4,6 +4,7 @@ import { useEffect, useState, useCallback, useRef } from "react";
 import popupimg from "../../../public/images/popup_img.webp";
 import axios from "axios";
 import { useRouter } from "next/navigation";
+import React from "react";
 
 const PopupForm = () => {
   const router = useRouter();
@@ -60,17 +61,29 @@ const PopupForm = () => {
 
     try {
       setLoader(true);
-      const data = await axios.post(
-        "https://nexon.eazotel.com/eazotel/addcontacts",
+      const { data } = await axios.post(
+        // `https://nexon.eazotel.com/eazotel/addcontacts`,
+        // `https://www.privyr.com/api/v1/incoming-leads/0vZfjMQw/e6KjRouX#generic-webhook`, //abhijeet
+        `https://www.privyr.com/api/v1/incoming-leads/0vZfjMQw/7lHAUjtz#generic-webhook`,
         {
-          Domain: "fielmente", // Replace with your actual domain value
+          // Domain: "fielmente",
+          // Domain: "abhijeet",
+          // email: userEmail,
+          // Name: userName,
+          // Contact: `${countryCode}${userPhone}`,
+          // Description: userMessage,
           email: userEmail,
-          Name: userName,
-          Contact: userPhone,
-          Description: userMessage,
+          name: userName,
+          phone: `${userPhone}`,
+          message: userMessage,
+        },
+        {
+          headers: {
+            "Content-Type": "application/json",
+          },
         }
       );
-      if (data.status) {
+      if (data.success) {
         setLoader(false);
         router.push("/thank-you");
       } else {
