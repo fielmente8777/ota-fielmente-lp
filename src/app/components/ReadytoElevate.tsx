@@ -134,7 +134,7 @@ const ReadytoElevate = () => {
                   id="fullName"
                   name="fullName"
                   type="text"
-                  placeholder="Pranav"
+                  placeholder="Enter your full name*"
                   required
                   value={formData.fullName}
                   onChange={handleChange}
@@ -195,7 +195,8 @@ const ReadytoElevate = () => {
                   id="email"
                   name="email"
                   required
-                  placeholder="k&khotels@gmail.com"
+                  placeholder="Enter your email*"
+                  // placeholder="k&khotels@gmail.com"
                   value={formData.email}
                   onChange={handleChange}
                   className="rounded-md px-5 py-2 text-xl placeholder:text-[#5E5E5E40] text-black bg-[#E8E8E8] w-full focus:outline-none"
@@ -212,7 +213,8 @@ const ReadytoElevate = () => {
                   type="text"
                   id="hotelName"
                   name="hotelName"
-                  placeholder="K&K Hotels"
+                  placeholder="Enter hotel name*"
+                  // placeholder="K&K Hotels"
                   value={formData.hotelName}
                   required
                   onChange={handleChange}

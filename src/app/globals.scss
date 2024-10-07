@@ -1,17 +1,24 @@
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 @layer utilities {
+    .no-spinner {
+        appearance: none;
+    }
     .no-spinner::-webkit-outer-spin-button,
-    .no-spinner::-webkit-inner-spin-button {
-        @apply appearance-none;
+    .no-spinner::-webkit-inner-spin-button{
+        // @apply appearance-none;
+        -webkit-appearance: none;
         margin: 0;
     }
 
     .no-spinner {
         @apply appearance-none;
+    }
+
+    .no-spinner[type=number] {
+        -moz-appearance: textfield;
     }
 }
 
@@ -107,7 +114,6 @@ body::-webkit-scrollbar-track {
         transform: translateY(3px);
     }
 }
-
 
 .shadow-btn {
     box-shadow: 2px 2px #1d1768;
