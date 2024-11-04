@@ -84,7 +84,7 @@ const ReadytoElevate = () => {
 
       if (response.status === 200) {
         console.log("Form submitted successfully!");
-        router.push("/thank-you");
+        router.push("/thank-you/");
         setFormData({
           fullName: "",
           countryCode: "+91", // Resetting to India's code

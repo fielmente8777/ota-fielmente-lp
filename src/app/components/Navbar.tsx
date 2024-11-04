@@ -9,10 +9,10 @@ import { usePathname } from "next/navigation";
 const Navbar = () => {
   const pathname = usePathname();
   return (
-    <header className={`${pathname === "/thank-you" ? "py-10 ":"lg:pt-14 pt-10" } max-w-[1600px] mx-auto bg-blue-sky`}>
+    <header className={`${pathname === "/thank-you/" ? "py-10 ":"lg:pt-14 pt-10" } max-w-[1600px] mx-auto bg-blue-sky`}>
       <Container>
         <nav className="flex justify-between items-center">
-          <div className="relative max-w-[164px] w-full lg:mx-0 mx-auto aspect-[4/1.3]">
+          <div className="relative h-[81px] lg:mx-0 mx-auto aspect-[4/2.1]">
             <Image
               src={Logo}
               alt="alt"

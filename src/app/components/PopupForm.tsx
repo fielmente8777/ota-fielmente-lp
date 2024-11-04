@@ -85,7 +85,7 @@ const PopupForm = () => {
       );
       if (data.success) {
         setLoader(false);
-        router.push("/thank-you");
+        router.push("/thank-you/");
       } else {
         setLoader(false);
         setPopupMsg("Something went wrong!");
