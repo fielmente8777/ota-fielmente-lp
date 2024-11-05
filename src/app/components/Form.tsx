@@ -169,9 +169,9 @@ const Form = () => {
   return (
     <form
       onSubmit={handleSubmit}
-      className="flex flex-col gap-4 max-md:px-4 px-6 py-8 max-md:mt-6 text-lg rounded-lg lg:max-w-[40.875rem] w-full bg-[#F5F5F5]"
+      className="flex flex-col gap-8 max-md:px-4 px-6 py-8 max-md:mt-6 text-lg rounded-lg lg:max-w-[40.875rem] w-full bg-[#F5F5F5]"
     >
-      <h2 className="text-lg lg:text-[2.5rem]/[3rem] font-normal text-blue-dark">
+      <h2 className="text-[2rem]/[3rem] lg:text-[2.5rem]/[3rem] font-normal text-blue-dark">
         Get A <b className="capitalize">FREE</b> Consultation!
       </h2>
       {/* <p className="text-gray-primary max-md:text-sm">
@@ -181,7 +181,7 @@ const Form = () => {
 
       {formData.map((data, index) => (
         <div key={index} className="flex flex-col gap-1">
-          <div className="flex  gap-2 text-gray-primary p-3 border bg-white border-blue-primary rounded-md">
+          <div className="flex  gap-2 text-gray-primary p-4 border bg-white border-blue-primary rounded-md">
             <label
               htmlFor={data.name}
               className={`${data.tag === "textarea" && "mt-1"}`}
