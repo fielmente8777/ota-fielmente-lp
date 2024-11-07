@@ -3,12 +3,22 @@ import Image from "next/image";
 import { useRouter } from "next/navigation";
 import src from "../../../public/images/thank-u.webp";
 import Container from "../components/Container";
+import { useEffect } from "react";
 const ThankUPopUp = () => {
   const router = useRouter();
 
   const redirectToHome = () => {
     router.push("/");
   };
+
+  useEffect(() => {
+    // Google Ads Conversion Tracking
+    const script = document.createElement("script");
+    script.innerHTML = `
+        gtag('event', 'conversion', {'send_to': 'AW-10860806708/YUWSCO2W-uQZELSE67oo'});
+    `;
+    document.head.appendChild(script);
+  }, []);
   return (
     <section className="">
       <div className="max-w-[1900px] mx-auto">

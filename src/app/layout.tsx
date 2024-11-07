@@ -104,6 +104,14 @@ export default function RootLayout({
               `,
             }}
           /> */}
+          <Script
+          id="google-conversion-tracking"
+          strategy="afterInteractive"
+          dangerouslySetInnerHTML={{
+            __html: `gtag('event', 'conversion', {'send_to': 'AW-10860806708/YUWSCO2W-uQZELSE67oo'});`,
+          }}
+        />
+
         <Script
           id="google-tag-manager"
           strategy="afterInteractive"
