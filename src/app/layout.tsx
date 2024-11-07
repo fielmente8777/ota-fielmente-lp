@@ -73,7 +73,6 @@ export default function RootLayout({
               `}
         </Script>
 
-        {/* <!-- End Google Tag Manager --> */}
         {/* <!-- Google tag (gtag.js) --> */}
         <Script
           async
@@ -104,7 +103,7 @@ export default function RootLayout({
               `,
             }}
           /> */}
-          <Script
+        <Script
           id="google-conversion-tracking"
           strategy="afterInteractive"
           dangerouslySetInnerHTML={{
