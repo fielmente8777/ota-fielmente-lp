@@ -5,6 +5,7 @@ import popupimg from "../../../public/images/popup_img.webp";
 import axios from "axios";
 import { useRouter } from "next/navigation";
 import React from "react";
+import Form from "./Form";
 
 const PopupForm = () => {
   const router = useRouter();
@@ -27,7 +28,7 @@ const PopupForm = () => {
     intervalIdRef.current = setInterval(() => {
       setShowModal(true);
       document.body.style.overflow = "hidden";
-    }, 60000);
+    }, 600);
 
     // Cleanup the interval when the component unmounts or modal is closed
     return () => {
@@ -140,7 +141,7 @@ const PopupForm = () => {
               >
                 X
               </button>
-              <div className="relative w-full h-[300px] aspect-[4/4]">
+              {/* <div className="relative w-full h-[300px] aspect-[4/4]">
                 <Image
                   src={popupimg}
                   alt="Hospitality Marketing"
@@ -181,7 +182,8 @@ const PopupForm = () => {
                     Submit
                   </button>
                 </div>
-              </form>
+              </form> */}
+              <Form />
             </div>
           </article>
         </section>
