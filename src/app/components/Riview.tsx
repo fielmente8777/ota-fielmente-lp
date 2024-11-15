@@ -7,6 +7,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 // Import Swiper styles
 import "swiper/css";
 import "swiper/css/navigation";
+import "swiper/css/autoplay";
 
 // import required modules
 import { Autoplay } from "swiper/modules";
@@ -33,6 +34,8 @@ const Riview = () => {
                     speed={900}
                     autoplay={{
                         delay: 4000,
+                        disableOnInteraction: false,
+                        pauseOnMouseEnter: true,
                     }}
                     breakpoints={{
                         // 640: {
