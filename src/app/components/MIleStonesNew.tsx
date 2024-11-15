@@ -30,13 +30,13 @@ const MIleStonesNew = () => {
           ? "Hospitality"
           : pathName === "/landing-page/"
             ? "Hotel"
-            : "Hospitality"} ASSOCIATED`,
+            : "Hotel"} ASSOCIATED`,
     },
-    {
-      icon: "/icon/restaurantass.gif",
-      number: "160+",
-      title: "RESTAURANTS ASSOCIATED",
-    },
+    // {
+    //   icon: "/icon/restaurantass.gif",
+    //   number: "160+",
+    //   title: "RESTAURANTS ASSOCIATED",
+    // },
     { icon: "/icon/countries.gif", number: "5+", title: "COUNTRIES PRESENCE" },
     {
       icon: "/icon/yearofexp.gif",
@@ -71,7 +71,7 @@ const MIleStonesNew = () => {
         </h2>
       </div> */}
       <Container>
-        <div className="border border-[#F2B203] w-full px-10 py-4 lg:grid hidden grid-cols-4">
+        <div className="border border-[#F2B203] w-full px-10 py-4 lg:grid hidden grid-cols-3">
           {data.map((item, index) => (
             <div
               key={index}
