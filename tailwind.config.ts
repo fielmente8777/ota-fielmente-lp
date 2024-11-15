@@ -20,8 +20,8 @@ const config: Config = {
         blue: {
           dark: "#110D3C",
           light: "#7DD2EE",
-          accent:"#6F82AF",
-          sapphire:"#1E6A98",
+          accent: "#6F82AF",
+          sapphire: "#1E6A98",
           secondary: "#14103D",
           sky: "#2B2197",
         },
@@ -33,10 +33,10 @@ const config: Config = {
           primary: "#797979",
           secondary: "#F5F5F5",
         },
-        mustard:{
+        mustard: {
           primary: "#F2B203"
         },
-        
+
       },
       fontSize: {
         "6xl": ["60px", "70px"],

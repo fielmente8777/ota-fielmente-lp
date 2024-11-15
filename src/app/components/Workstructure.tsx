@@ -17,7 +17,7 @@ const Workstructure = () => {
               {data.map((item, index) => (
                 <li
                   key={index}
-                  className="flex items-center gap-3 text-lg text-gray-primary"
+                  className="flex items-center gap-3 text-lg line-through text-gray-primary "
                 >
                   <GreenCircleIcon /> {item}
                 </li>

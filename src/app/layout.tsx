@@ -49,20 +49,6 @@ export default function RootLayout({
           name="google-site-verification"
           content="vKQyk75wG0kfB4x60GCRAmVeErtPS9rgcM9-YNRAvLw"
         />
-        {/* <!-- Google Tag Manager --> */}
-        {/* <Script
-          id="google-tag-manager"
-          strategy="afterInteractive"
-          dangerouslySetInnerHTML={{
-            __html: `
-              (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-              new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-              j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-              'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-              })(window,document,'script','dataLayer','GTM-57NM3B49');
-            `,
-          }}
-        /> */}
         <Script id="clarity-script" strategy="afterInteractive">
           {`
             (function(c,l,a,r,i,t,y){
@@ -90,26 +76,6 @@ export default function RootLayout({
             gtag('config', 'G-PVZG7NGGMG');`,
           }}
         ></Script>
-        {/* <Script
-            id="google-tag-manager"
-            strategy="afterInteractive"
-            dangerouslySetInnerHTML={{
-              __html: `
-               (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-  })(window,document,'script','dataLayer','GTM-P6S255Q');
-              `,
-            }}
-          /> */}
-        <Script
-          id="google-conversion-tracking"
-          strategy="afterInteractive"
-          dangerouslySetInnerHTML={{
-            __html: `gtag('event', 'conversion', {'send_to': 'AW-10860806708/YUWSCO2W-uQZELSE67oo'});`,
-          }}
-        />
 
         <Script
           id="google-tag-manager"
@@ -128,19 +94,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       <body className={inter.className} suppressHydrationWarning={true}>
         {/* <!-- Google Tag Manager (noscript) --> */}
         <noscript>
-          {/* <iframe
-            src="https://www.googletagmanager.com/ns.html?id=GTM-57NM3B49"
-            height="0"
-            width="0"
-            style={{ display: "none", visibility: "hidden" }}
-          ></iframe> */}
-
-          {/*<iframe
-            src="https://www.googletagmanager.com/ns.html?id=GTM-P6S255Q"
-            height="0"
-            width="0"
-            style={{ display: "none", visibility: "hidden" }}
-          ></iframe>*/}
           <iframe
             src="https://www.googletagmanager.com/ns.html?id=GTM-WQ5LPRNM"
             height="0"

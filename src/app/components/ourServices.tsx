@@ -17,7 +17,7 @@ const OurServices: React.FC = () => {
     <Section className="lg:py-10">
       <Container>
         <h2 className="lg:text-5xl text-3xl text-blue-sky text-center font-bold lg:mb-9 mb-5">
-        Our Services
+          Our Services
         </h2>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 ">
           {data.map((item, index) => (
@@ -43,18 +43,18 @@ const data = [
     title: "Online Reputation   Management",
     icon: <OnlineReputationManagement />,
   },
-  {
-    title: "Website Development/ Optimization",
-    icon: <WebsiteDevelopmentOptimization />,
-  },
-  {
-    title: "Social Media Marketing/ Management",
-    icon: <SocialMediaMarketingManagement />,
-  },
-  {
-    title: "Google & Social Media Advertising",
-    icon: <GoogleSocialMediaAdvertising />,
-  },
+  // {
+  //   title: "Website Development/ Optimization",
+  //   icon: <WebsiteDevelopmentOptimization />,
+  // },
+  // {
+  //   title: "Social Media Marketing/ Management",
+  //   icon: <SocialMediaMarketingManagement />,
+  // },
+  // {
+  //   title: "Google & Social Media Advertising",
+  //   icon: <GoogleSocialMediaAdvertising />,
+  // },
   {
     title: "Online Travel Agency Optimization",
     icon: <OnlineTravelAgencyOptimization />,
@@ -63,16 +63,16 @@ const data = [
     title: "Search Engine  Optimization/ Marketing",
     icon: <SearchEngineOptimizationMarketing />,
   },
-  {
-    title: "Google My Business/ Local Listing",
-    icon: <GoogleMyBusinessLocalListing />,
-  },
-  {
-    title: "PR & Communications",
-    icon: <PRCommunications />,
-  },
-  {
-    title: "Influencer Marketing",
-    icon: <InfluencerMarketing />,
-  },
+  // {
+  //   title: "Google My Business/ Local Listing",
+  //   icon: <GoogleMyBusinessLocalListing />,
+  // },
+  // {
+  //   title: "PR & Communications",
+  //   icon: <PRCommunications />,
+  // },
+  // {
+  //   title: "Influencer Marketing",
+  //   icon: <InfluencerMarketing />,
+  // },
 ];
