@@ -23,7 +23,7 @@ const Banner: React.FC = () => {
           </div> */}
           <div className="w-full flex justify-center lg:gap-14 gap-5 flex-col">
             <h1 className="text-white lg:text-6xl text-3xl font-bold mb-4 max-md:text-center">
-              Fielmente- Leading Online Revenue Management
+              Fielmente - Leading Online Revenue Management Company
             </h1>
             <div className="flex md:flex-row flex-col md:items-center md:gap-8 gap-3">
               <p className="text-[18px] flex items-center gap-5">
@@ -38,7 +38,7 @@ const Banner: React.FC = () => {
                 </span>
                 <span className="flex gap-10 items-center justify-center">
                   <TrustPiolet />
-                  <Airbnb />
+                  {/* <Airbnb /> */}
                 </span>
               </div>
             </div>

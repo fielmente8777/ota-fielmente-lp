@@ -56,9 +56,8 @@ const Riview = () => {
                 >
                     {OtaImages.map((item, index) => (
                         <SwiperSlide key={index} className="p-5">
-                            <Link
-                                href={"/"}
-                                className="relative w-full lg:aspect-[3/1.5] aspect-[4/4] md:h-[40rem] rounded-xl flex justify-center items-center   "
+                            <div
+                                className="relative w-full lg:aspect-[3/1.5] aspect-[4/4] md:h-[40rem] rounded-xl flex justify-center items-center"
                             >
                                 <Image
                                     src={item.src}
@@ -69,7 +68,7 @@ const Riview = () => {
                                     priority={true}
                                     className="object-contain w-full h-full rounded-md p-3 bg-white"
                                 />
-                            </Link>
+                            </div>
                         </SwiperSlide>
                     ))}
                 </Swiper>

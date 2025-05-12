@@ -9,7 +9,7 @@ import { usePathname } from "next/navigation";
 const Navbar = () => {
   const pathname = usePathname();
   return (
-    <header className={`${pathname === "/thank-you/" ? "py-10 ":"lg:pt-14 pt-10" } max-w-[1600px] mx-auto bg-blue-sky`}>
+    <header className={`${pathname === "/thank-you/" ? "py-10 " : "lg:pt-14 pt-10"} max-w-[1600px] mx-auto bg-blue-sky`}>
       <Container>
         <nav className="flex justify-between items-center">
           <div className="relative h-[81px] lg:mx-0 mx-auto aspect-[4/2.1]">
@@ -24,12 +24,12 @@ const Navbar = () => {
           <ul className="lg:flex hidden gap-4 items-center">
             <li>
               <Link
-                href={"mailto:info@fielmente.com"}
-                className="flex items-center text-white text-lg md:px-5 px-3 md:py-4 py-2"
+                href={"mailto:sachin@fielmente.com"}
+                className="flex items-center gap-1 text-white text-lg md:px-5 px-3 md:py-4 py-2"
               >
                 <span className="sr-only">mail icon</span>
-                <MailIcon />
-                info@fielmente.com
+                <span><MailIcon /></span>
+                sachin@fielmente.com
               </Link>
             </li>
             <li>

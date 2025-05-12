@@ -9,6 +9,7 @@ import OurOTAPartners from "./OurOTAPartners";
 import ReadytoElevate from "./ReadytoElevate";
 import PopupForm from "./PopupForm";
 import Form from "./Form";
+import ConsultationForm from './ConsultationForm';
 
 export {
   Banner,
@@ -22,4 +23,5 @@ export {
   ReadytoElevate,
   PopupForm,
   Form,
+  ConsultationForm
 };

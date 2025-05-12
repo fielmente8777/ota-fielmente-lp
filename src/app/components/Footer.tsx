@@ -133,11 +133,15 @@ const Footer = () => {
   ];
   const services = [
     {
-      title: "Website Development",
+      title: "OTA Listing",
       link: "#services",
     },
+    // {
+    //   title: "Website Development",
+    //   link: "#services",
+    // },
     {
-      title: "Social Media Marketing",
+      title: "Online Reputation Management",
       link: "#services",
     },
     {
@@ -145,13 +149,13 @@ const Footer = () => {
       link: "#services",
     },
     {
-      title: "Paid ad campaigns",
+      title: "Channel Optimization",
       link: "#services",
     },
   ];
   const contactLinks = [
     {
-      title: "Call: +91 95018 68777",
+      title: "Call: +91 95018 68775",
       link: "tel:+919501868775",
     },
     {
@@ -198,10 +202,10 @@ const Footer = () => {
       >
         <Container>
           <div className="flex flex-col items-start gap-10">
-            <div className="h-[7.625rem] relative aspect-[4/1.95]">
+            {/* <div className="h-[7.625rem] relative aspect-[4/1.95]">
               <Image src={Logo} alt="logo" fill className="object-contain" />
-            </div>
-            <div className="grid w-full lg:grid-cols-4 md:grid-cols-2 grid-cols-1 gap-6">
+            </div> */}
+            <div className="grid w-full lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-6">
               {/* About */}
               <div>
                 <h2 className="text-3xl text-orange-primary font-bold mb-4">
@@ -258,7 +262,7 @@ const Footer = () => {
               </div>
 
               {/* Newsletter */}
-              <div>
+              {/* <div>
                 <h2 className="text-3xl text-orange-primary font-bold mb-4">
                   Newsletter
                 </h2>
@@ -299,7 +303,7 @@ const Footer = () => {
                     <span className="text-[#F2B203]">Privacy Policy</span>.
                   </p>
                 </div>
-              </div>
+              </div> */}
             </div>
             <div className="flex max-md:flex-col gap-6 lg:items-center justify-between w-full lg:mt-4">
               <div className="flex items-center gap-5">
@@ -310,20 +314,20 @@ const Footer = () => {
                   <Google />
                 </div>
               </div>
-              <div className="flex flex-col gap-4">
+              {/* <div className="flex flex-col gap-4">
                 <h3 className="text-xl font-semibold text-orange-primary">
                   Follow Us:
                 </h3>
                 <ul className="flex  items-center gap-4">
                   {socialLinks.map((item, index) => (
                     <li key={index} className="max-md:p-2 lg:pe-2 lg:py-2">
-                      {/* <span href={item.link} target="_blank" rel="noreferrer"> */}
+                      <span href={item.link} target="_blank" rel="noreferrer">
                       {item.icon} <span className="sr-only">icon</span>
-                      {/* </span> */}
+                      </span>
                     </li>
                   ))}
                 </ul>
-              </div>
+              </div> */}
             </div>
           </div>
         </Container>
