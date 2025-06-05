@@ -6,6 +6,7 @@ import Footer from "./components/Footer";
 import Script from "next/script";
 import Call from "./components/Call";
 import Whatsapp from "./components/WhatsApp";
+import Salesiq from "./components/zohochatbot/Salesiq";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -49,6 +50,7 @@ export default function RootLayout({
           name="google-site-verification"
           content="vKQyk75wG0kfB4x60GCRAmVeErtPS9rgcM9-YNRAvLw"
         />
+        <Salesiq />
         <Script id="clarity-script" strategy="afterInteractive">
           {`
             (function(c,l,a,r,i,t,y){
