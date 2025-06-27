@@ -3,7 +3,7 @@ import Link from "next/link";
 
 import Logo from "../../../public/images/landingPage/logo2.png";
 import bannerImg from "../../../public/images/landingPage4/OBJECTS_.png";
-import Container from "@/app/components/Container";
+import Container from "@/components/Container";
 import {
   Airbnb,
   CallOrangeIcon,

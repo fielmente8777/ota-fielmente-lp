@@ -1,12 +1,12 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.scss";
-import Navbar from "./components/Navbar";
-import Footer from "./components/Footer";
+import Navbar from "@/components/Navbar";
+import Footer from "@/components/Footer";
 import Script from "next/script";
-import Call from "./components/Call";
-import Whatsapp from "./components/WhatsApp";
-import Salesiq from "./components/zohochatbot/Salesiq";
+import Call from "@/components/Call";
+import Whatsapp from "@/components/WhatsApp";
+import Salesiq from "@/components/zohochatbot/Salesiq";
 
 const inter = Inter({ subsets: ["latin"] });
 

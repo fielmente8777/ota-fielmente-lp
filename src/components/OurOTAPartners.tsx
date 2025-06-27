@@ -1,6 +1,6 @@
 "use client";
-import Container from "@/app/components/Container";
-import Section from "@/app/components/Section";
+import Container from "@/components/Container";
+import Section from "@/components/Section";
 // Import Swiper React components
 import { Swiper, SwiperSlide } from "swiper/react";
 
@@ -13,12 +13,6 @@ import { Autoplay } from "swiper/modules";
 import Image from "next/image";
 import Link from "next/link";
 
-import makemytrip from "../../../public/images/landingPage4/makemytrip-logo.png";
-import cleartrip from "../../../public/images/landingPage4/cleartrip-logo.png";
-import goibibo from "../../../public/images/landingPage4/goibibo-logo.png";
-import agoda from "../../../public/images/landingPage4/agoda-logo.png";
-import razorpay from "../../../public/images/landingPage4/razorpay-logo.png";
-import airbnb from "../../../public/images/landingPage4/airbnb-logo.png";
 
 const OurOTAPartners = () => {
   return (
@@ -53,7 +47,7 @@ const OurOTAPartners = () => {
           }}
           className="mySwiper"
         >
-          {OtaImages.map((item, index) => (
+          {[...OtaImages, ...OtaImages].map((item, index) => (
             <SwiperSlide key={index} className="p-5">
               <Link
                 href={"/"}
@@ -81,51 +75,27 @@ export default OurOTAPartners;
 
 const OtaImages = [
   {
-    src: makemytrip,
+    src: "/images/landingPage4/makemytrip-logo.png",
     alt: "make my trip",
   },
   {
-    src: cleartrip,
+    src: "/images/landingPage4/cleartrip-logo.png",
     alt: "clear trip",
   },
   {
-    src: airbnb,
+    src: "/images/landingPage4/airbnb-logo.png",
     alt: "airbnb",
   },
   {
-    src: goibibo,
+    src: "/images/landingPage4/goibibo-logo.png",
     alt: "goibibo",
   },
   {
-    src: agoda,
+    src: "/images/landingPage4/agoda-logo.png",
     alt: "agoda",
   },
   {
-    src: razorpay,
-    alt: "razorpay",
-  },
-  {
-    src: makemytrip,
-    alt: "make my trip",
-  },
-  {
-    src: cleartrip,
-    alt: "clear trip",
-  },
-  {
-    src: airbnb,
-    alt: "airbnb",
-  },
-  {
-    src: goibibo,
-    alt: "goibibo",
-  },
-  {
-    src: agoda,
-    alt: "agoda",
-  },
-  {
-    src: razorpay,
+    src: "/images/landingPage4/razorpay-logo.png",
     alt: "razorpay",
   },
 ];

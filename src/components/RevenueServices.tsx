@@ -1,5 +1,5 @@
-import Container from "@/app/components/Container";
-import Section from "@/app/components/Section";
+import Container from "@/components/Container";
+import Section from "@/components/Section";
 
 const RevenueServices = () => {
   return (

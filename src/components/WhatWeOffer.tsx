@@ -1,5 +1,5 @@
-import Container from "@/app/components/Container";
-import Section from "@/app/components/Section";
+import Container from "@/components/Container";
+import Section from "@/components/Section";
 import { OtaListIcon, OtaManagement, RevenueManagement } from "@/icons/icons";
 
 const WhatWeOffer = () => {

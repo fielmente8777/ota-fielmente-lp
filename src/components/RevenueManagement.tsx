@@ -1,10 +1,6 @@
-import Container from "@/app/components/Container";
-import Section from "@/app/components/Section";
-import img1 from "../../../public/images/landingpage4/standard-quality-control.png";
-import img2 from "../../../public/images/landingpage4/man-working.png";
-import img3 from "../../../public/images/landingpage4/still-life.png";
+import Container from "@/components/Container";
+import Section from "@/components/Section";
 import Image, { StaticImageData } from "next/image";
-import Link from "next/link";
 
 const RevenueManagement = () => {
   return (
@@ -58,19 +54,19 @@ interface cardDataType {
 
 const data: cardDataType[] = [
   {
-    src: img1,
+    src: '/images/landingpage4/standard-quality-control.png',
     title: "Proven Expertise",
     description:
       "Our team brings extensive experience in revenue management, ensuring that your business capitalizes on every opportunity for growth.",
   },
   {
-    src: img2,
+    src: '/images/landingpage4/man-working.png',
     title: "Data-Driven Strategies",
     description:
       "We employ sophisticated analytics to understand market trends, demand patterns, and customer behaviour, allowing us to tailor strategies that align with your business objectives.",
   },
   {
-    src: img3,
+    src: '/images/landingpage4/still-life.png',
     title: "Customized Approach",
     description:
       "We employ sophisticated analytics to understand market trends, demand patterns, and customer behavior, allowing us to tailor strategies that align with your business objectives.",

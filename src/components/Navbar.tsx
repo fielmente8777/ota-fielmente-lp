@@ -1,8 +1,7 @@
 "use client";
 import Link from "next/link";
-import Container from "@/app/components/Container";
+import Container from "@/components/Container";
 import { CallOrangeIcon, MailIcon } from "@/icons/icons";
-import Logo from "../../../public/images/logo2.png";
 import Image from "next/image";
 
 import { usePathname } from "next/navigation";
@@ -14,7 +13,7 @@ const Navbar = () => {
         <nav className="flex justify-between items-center">
           <div className="relative h-[81px] lg:mx-0 mx-auto aspect-[4/2.1]">
             <Image
-              src={Logo}
+              src={"/images/logo2.png"}
               alt="alt"
               priority={true}
               fill

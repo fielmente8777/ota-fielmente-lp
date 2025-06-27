@@ -1,5 +1,5 @@
 "use client";
-import Section from "@/app/components/Section";
+import Section from "@/components/Section";
 import { countries } from "@/utils/countryCode";
 import { useState } from "react";
 import axios from "axios";

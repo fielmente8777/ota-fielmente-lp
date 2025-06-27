@@ -1,7 +1,6 @@
-import Container from "@/app/components/Container";
-import Section from "@/app/components/Section";
+import Container from "@/components/Container";
+import Section from "@/components/Section";
 import Image from "next/image";
-import fastCharge from "../../../public/images/landingpage4/fast-charge.png";
 import { GreenCircleIcon } from "@/icons/icons";
 
 const Supercharge = () => {
@@ -10,7 +9,7 @@ const Supercharge = () => {
       <Container>
         <div className="flex justify-center items-center flex-col mb-8">
           <div>
-            <Image src={fastCharge} alt="alt" width={58} height={58} />
+            <Image src={'/images/landingpage4/fast-charge.png'} alt="alt" width={58} height={58} />
           </div>
           <h2 className="lg:text-5xl text-[1.5rem] text-black font-bold text-center">
             Let’s Supercharge your <br />{" "}
