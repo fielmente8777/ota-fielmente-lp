@@ -9,8 +9,10 @@ import OurOTAPartners from "./OurOTAPartners";
 import ReadytoElevate from "./ReadytoElevate";
 import PopupForm from "./PopupForm";
 import Form from "./Form";
-import ConsultationForm from './ConsultationForm';
-
+import ConsultationForm from "./ConsultationForm";
+import { ChooseUsCard, RevenueServiceCard } from "./cards";
+import SwiperCarousel from "./SwiperCarousel";
+import OurClients from "./OurClients";
 export {
   Banner,
   Supercharge,
@@ -23,5 +25,8 @@ export {
   ReadytoElevate,
   PopupForm,
   Form,
-  ConsultationForm
+  ConsultationForm,
+  ChooseUsCard,
+  SwiperCarousel,
+  OurClients,
 };

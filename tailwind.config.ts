@@ -38,15 +38,7 @@ const config: Config = {
         },
 
       },
-      fontSize: {
-        "6xl": ["60px", "70px"],
-        "5xl": ["42px", "50px"],
-        "4xl": ["36px", "44px"],
-        "3xl": ["25px", "32px"],
-        xl: ["18px", "30px"],
-        lg: ["15px", "25px"],
-        sm: ["12px", "20px"],
-      },
+    
     },
   },
   plugins: [],

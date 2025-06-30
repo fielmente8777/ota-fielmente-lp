@@ -7,61 +7,78 @@ import { FillUser, FillPhone, FillMail, FillMessage } from '@/icons/icons';
 
 const Form = () => {
   const router = useRouter();
-  const [userName, setUserName] = useState("");
-  const [userEmail, setUserEmail] = useState("");
-  const [userMessage, setUserMessage] = useState("");
-  const [userPhone, setUserPhone] = useState("");
-  const [countryCode, setCountryCode] = useState("+91"); // Default country code
-  const [formRes, setFormRes] = useState(false);
-  const [emailErrorMessage, setEmailErrorMessage] = useState("");
-  const [errorMessage, setErrorMessage] = useState("");
+  const [formData, setFormData] = useState({
+    userName: "",
+    userEmail: "",
+    userMessage: "",
+    userPhone: "",
+  });
+  const [countryCode, setCountryCode] = useState("+91");
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [errors, setErrors] = useState({
+    email: "",
+    phone: "",
+  });
+
   const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
-  const handlePhoneChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const value = e.target.value.replace(/\D/g, ""); // Remove non-numeric characters
-    if (value.length <= 10) {
-      setUserPhone(value);
-      setErrorMessage(value.length < 10 ? "Please enter a valid number" : "");
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    const { name, value } = e.target;
+    setFormData(prev => ({ ...prev, [name]: value }));
+    
+    // Clear error when user types
+    if (name === "userEmail" && errors.email) {
+      setErrors(prev => ({ ...prev, email: "" }));
+    }
+    if (name === "userPhone" && errors.phone) {
+      setErrors(prev => ({ ...prev, phone: "" }));
     }
   };
 
-  const handleEmailChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const value = e.target.value;
-    setUserEmail(value);
-    setEmailErrorMessage(
-      !emailRegex.test(value) ? "Please enter a valid email address" : ""
-    );
+  const handlePhoneChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const value = e.target.value.replace(/\D/g, "");
+    if (value.length <= 10) {
+      setFormData(prev => ({ ...prev, userPhone: value }));
+      setErrors(prev => ({
+        ...prev,
+        phone: value.length < 10 ? "Please enter a valid number" : ""
+      }));
+    }
+  };
+
+  const validateForm = () => {
+    let isValid = true;
+    const newErrors = { ...errors };
+
+    if (!emailRegex.test(formData.userEmail)) {
+      newErrors.email = "Please enter a valid email address";
+      isValid = false;
+    }
+
+    if (formData.userPhone.length !== 10) {
+      newErrors.phone = "Phone number must be exactly 10 digits";
+      isValid = false;
+    }
+
+    setErrors(newErrors);
+    return isValid;
   };
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    setFormRes(true);
+    
+    if (!validateForm()) return;
 
-    if (userPhone.length !== 10) {
-      setErrorMessage("Phone number must be exactly 10 digits.");
-      return;
-    }
-
-    if (!emailRegex.test(userEmail)) {
-      setEmailErrorMessage("Please enter a valid email address.");
-      return;
-    }
+    setIsSubmitting(true);
 
     try {
-      const { data } = await axios.post(
-        // `https://nexon.eazotel.com/eazotel/addcontacts`,
+      const response = await axios.post(
         `https://www.privyr.com/api/v1/incoming-leads/0vZfjMQw/7lHAUjtz#generic-webhook`,
         {
-          // Domain: "fielmente",
-          // Domain: "abhijeet",
-          // email: userEmail,
-          // Name: userName,
-          // Contact: `${countryCode}${userPhone}`,
-          // Description: userMessage,
-          email: userEmail,
-          name: userName,
-          phone: `${countryCode}${userPhone}`,
-          message: userMessage,
+          email: formData.userEmail,
+          name: formData.userName,
+          phone: `${countryCode}${formData.userPhone}`,
+          message: formData.userMessage,
         },
         {
           headers: {
@@ -70,54 +87,44 @@ const Form = () => {
         }
       );
 
-      if (data.success) {
-        setFormRes(true);
-        setUserName("");
-        setUserEmail("");
-        setUserMessage("");
-        setUserPhone("");
-        setCountryCode("+91"); // Reset country code
-        setFormRes(false);
-        // router.push(`/thank-you/`,"_blank");
+      if (response.data.success) {
+        // Reset form
+        setFormData({
+          userName: "",
+          userEmail: "",
+          userMessage: "",
+          userPhone: "",
+        });
+        setCountryCode("+91");
         window.open("/thank-you/", "_blank");
-        // router.push(`/thank-you/?name=${encodeURIComponent(userName)}`);
       } else {
-        setFormRes(false);
-        alert("Something went wrong!");
+        alert("Something went wrong. Please try again.");
       }
     } catch (error) {
-      console.log(error);
+      console.error("Submission error:", error);
+      alert("Failed to submit. Please try again later.");
+    } finally {
+      setIsSubmitting(false);
     }
   };
 
-  const formData = [
+  const formFields = [
     {
-      tag: "input",
-      icon: <FillUser />,
+      id: "userName",
       type: "text",
-      name: "name",
       placeholder: "Your Name*",
-      required: true,
-      value: userName,
-      onChange: (e: React.ChangeEvent<HTMLInputElement>) => {
-        setUserName(e.target.value);
-      },
+      value: formData.userName,
+      onChange: handleChange,
     },
     {
-      tag: "div", // Use div to wrap select and input for phone number
-      icon: <FillPhone />,
-      name: "phone",
-      placeholder: "Your Phone*",
-      required: true,
-      content: (
-        <div className="flex gap-2 text-lg">
+      id: "phone",
+      customContent: (
+        <div className="flex gap-2 text-lg divide-x divide-[#D7D7D7]">
           <select
-            id="countryCode"
-            name="countryCode"
             value={countryCode}
             onChange={(e) => setCountryCode(e.target.value)}
-            className="w-auto bg-transparent rounded-lg text-[#333333] focus:outline-none"
-            style={{ inlineSize: `${countryCode.length + 2.3}ch` }}
+            className="bg-transparent ps-2 w-fit text-[#333333] focus:outline-none"
+            style={{ inlineSize: `${countryCode.length + 6.5}ch` }}
             aria-label="Country Code"
           >
             {countries.map((country, index) => (
@@ -126,97 +133,92 @@ const Form = () => {
                 value={country.code}
                 className="text-black bg-gray-100 p-0"
               >
-                {`${country.code}`}
+                {`${country.code}${country.name}`}
               </option>
             ))}
           </select>
           <input
             type="number"
-            id="phone"
-            name="phone"
+            id="userPhone"
+            name="userPhone"
             max={"9999999999"}
             placeholder="Your Phone*"
-            value={userPhone}
+            value={formData.userPhone}
             onChange={handlePhoneChange}
-            className="w-full bg-transparent rounded-md placeholder:text-black-primary text-black no-spinner focus:outline-none"
+            className="w-full bg-transparent py-4 ps-2 placeholder:text-black-primary text-black no-spinner focus:outline-none"
           />
         </div>
       ),
     },
     {
-      tag: "input",
-      icon: <FillMail />,
+      id: "userEmail",
       type: "email",
-      name: "email",
       placeholder: "Your Email*",
-      required: true,
-      value: userEmail,
-      onChange: handleEmailChange,
+      value: formData.userEmail,
+      onChange: handleChange,
     },
     {
-      tag: "textarea",
-      icon: <FillMessage />,
-      type: "text",
-      name: "",
+      id: "userMessage",
+      type: "textarea",
       placeholder: "Your Message*",
-      required: true,
-      value: userMessage,
-      onChange: (e: React.ChangeEvent<HTMLInputElement>) => {
-        setUserMessage(e.target.value);
-      },
+      value: formData.userMessage,
+      onChange: handleChange,
     },
   ];
 
   return (
     <form
       onSubmit={handleSubmit}
-      className="flex flex-col gap-8 max-md:px-4 px-6 py-8 max-md:mt-6 text-lg rounded-lg lg:max-w-[40.875rem] w-full bg-[#F5F5F5]"
+      className="flex flex-col gap-4 max-md:p-4 px-4 py-6  rounded-xl w-full bg-[#F5F5F5]"
+      noValidate
     >
-      <h2 className="text-[2rem]/[3rem] lg:text-[2.5rem]/[3rem] font-normal text-blue-dark">
-        Get A <b className="capitalize">FREE</b> Consultation!
+      <h2 className="text-2xl  font-semibold text-blue-dark">
+        Get A FREE Consultation!
       </h2>
-      {/* <p className="text-gray-primary max-md:text-sm">
-        Fill in your details and a Venue Specialist will get back to you
-        shortly.
-      </p> */}
 
-      {formData.map((data, index) => (
-        <div key={index} className="flex flex-col gap-1">
-          <div className="flex  gap-2 text-gray-primary p-4 border bg-white border-blue-primary rounded-md">
-            <label
-              htmlFor={data.name}
-              className={`${data.tag === "textarea" && "mt-1"}`}
-            >
-              {data.icon}
-            </label>
-            {data.tag === "div"
-              ? data.content
-              : React.createElement(data.tag, {
-                id: data.name,
-                type: data.type,
-                name: data.name,
-                value: data.value,
-                onChange: data.onChange,
-                placeholder: data.placeholder,
-                required: data.required,
-                autoComplete: "off",
-                spellCheck: "false",
-                rows: data.tag === "textarea" ? 3 : undefined,
-                className:
-                  "w-full bg-transparent no-spinner resize-none focus:outline-none rounded-md valid:outline-blue-primary invalid:outline-Saffron-primary",
-              })}
+      {formFields.map((field) => (
+        <div key={field.id} className="flex flex-col gap-1">
+          <div className="flex gap-2 text-gray-primary border bg-white border-[#D7D7D7] rounded-lg">
+            {field.customContent ? (
+              field.customContent
+            ) : field.type === "textarea" ? (
+              <textarea
+                id={field.id}
+                name={field.id}
+                value={field.value}
+                onChange={field.onChange}
+                placeholder={field.placeholder}
+                required
+                rows={3}
+                className="w-full bg-transparent no-spinner p-4 resize-none focus:outline-none rounded-md valid:outline-blue-primary invalid:outline-Saffron-primary"
+              />
+            ) : (
+              <input
+                id={field.id}
+                type={field.type}
+                name={field.id}
+                value={field.value}
+                onChange={field.onChange}
+                placeholder={field.placeholder}
+                required
+                className="w-full bg-transparent no-spinner p-4 focus:outline-none rounded-md valid:outline-blue-primary invalid:outline-Saffron-primary"
+              />
+            )}
           </div>
-          {data.name === "phone" && errorMessage && (
-            <p className="text-sm text-red-500 mt-2">{errorMessage}</p>
-          )}
-          {data.name === "email" && emailErrorMessage && (
-            <p className="text-sm text-red-500 mt-2">{emailErrorMessage}</p>
+          {errors[field.id as keyof typeof errors] && (
+            <p className="text-sm text-red-500 mt-2">
+              {errors[field.id as keyof typeof errors]}
+            </p>
           )}
         </div>
       ))}
 
-      <button className="w-full text-center bg-orange-primary text-white justify-center border-orange-primary text-xl px-8 py-2  font-semibold rounded-md hover:bg-white hover:text-orange-primary duration-300 active:scale-75 hover:scale-105 border border-blue-primary">
-        {formRes ? "Loading...." : "Submit"}
+      <button
+        type="submit"
+        disabled={isSubmitting}
+        className="w-full text-center bg-orange-primary text-white justify-center border-orange-primary text-xl px-8 py-2 font-semibold rounded-md hover:bg-white hover:text-orange-primary duration-300 active:scale-75 hover:scale-105 border border-blue-primary disabled:opacity-70 disabled:cursor-not-allowed"
+      >
+        {isSubmitting ? "Submitting..." : "Submit"}
       </button>
     </form>
   );

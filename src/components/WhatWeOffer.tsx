@@ -6,7 +6,7 @@ const WhatWeOffer = () => {
   return (
     <Section className="lg:py-10">
       <Container>
-        <h2 className="lg:text-5xl text-3xl text-blue-sky font-bold lg:mb-8 mb-5">
+        <h2 className="md:text-4xl text-3xl text-blue-sky font-semibold lg:mb-8 mb-5">
           What We Offer?
         </h2>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -16,7 +16,7 @@ const WhatWeOffer = () => {
               className="flex flex-col items-center group justify-center gap-4 bg-[#F26633]/10 px-8 py-14 rounded-3xl"
             >
               <div className="text-5xl group-hover:-translate-y-3 transition ease-in-out duration-700">{item.icon}</div>
-              <h3 className="lg:text-3xl text-xl text-orange-primary capitalize font-bold text-center">
+              <h3 className="md:text-2xl text-xl text-orange-primary capitalize font-bold text-center">
                 {item.text1} <br className="hidden lg:block" /> {item.text2}
               </h3>
             </div>

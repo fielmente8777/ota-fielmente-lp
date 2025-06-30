@@ -2,7 +2,7 @@
 import Image from "next/image";
 import { useRouter } from "next/navigation";
 import src from "../../../public/images/thank-u.webp";
-import Container from "../components/Container";
+import Container from "@/components/Container";
 import { useEffect } from "react";
 const ThankUPopUp = () => {
   const router = useRouter();
@@ -22,7 +22,7 @@ const ThankUPopUp = () => {
   return (
     <section className="">
       <div className="max-w-[1900px] mx-auto">
-        <div className="relative w-full h-[85vh] aspect-[16/9]">
+        <div className="relative w-full h-dvh aspect-[16/9]">
           <Image
             src={src}
             alt="hospitality marketing"
@@ -31,7 +31,7 @@ const ThankUPopUp = () => {
           />
           <div className="absolute top-0  left-0 w-full lg:bg-[rgba(225,225,225,0.2)] bg-[rgba(0,0,0,0.5)]">
             <Container>
-              <div className="flex flex-col  h-[85vh] w-full  justify-center">
+              <div className="flex flex-col  h-dvh w-full  justify-center">
                 <h1 className="text-5xl font-bold lg:text-white mb-4">
                   Thank You!
                 </h1>

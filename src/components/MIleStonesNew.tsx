@@ -86,10 +86,10 @@ const MIleStonesNew = () => {
                 />
               </div>
               <div className="flex flex-col items-center gap-4 justify-center">
-                <h3 className="text-blue-dark text-[2.5rem] font-semibold">
+                <h3 className="text-blue-dark text-2xl font-semibold">
                   {item.number}
                 </h3>
-                <p className="text-blue-dark text-[1.2rem] uppercase">{item.title}</p>
+                <p className="text-blue-dark text-sm uppercase">{item.title}</p>
               </div>
             </div>
           ))}
@@ -129,10 +129,10 @@ const MIleStonesNew = () => {
                     />
                   </div>
                   <div className="flex flex-col items-center gap-4 justify-center">
-                    <h3 className="text-blue-dark text-4xl font-semibold">
+                    <h3 className="text-blue-dark text-2xl font-semibold">
                       {item.number}
                     </h3>
-                    <p className="text-blue-dark text-base uppercase">{item.title}</p>
+                    <p className="text-blue-dark text-sm uppercase">{item.title}</p>
                   </div>
                 </div>
               </SwiperSlide>

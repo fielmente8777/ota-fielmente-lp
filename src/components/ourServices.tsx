@@ -16,10 +16,10 @@ const OurServices: React.FC = () => {
   return (
     <Section className="lg:py-10">
       <Container>
-        <h2 className="lg:text-5xl text-3xl text-blue-sky text-center font-bold lg:mb-9 mb-5">
+        <h2 className="md:text-4xl text-3xl text-blue-sky text-center font-bold lg:mb-9 mb-5">
           Our Services
         </h2>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 ">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 ">
           {data.map((item, index) => (
             <div key={index} className="flex items-center group justify-start  gap-4">
               <div>
@@ -27,7 +27,7 @@ const OurServices: React.FC = () => {
                   {item.icon}
                 </div>
               </div>
-              <h3 className="lg:text-xl text-lg group text-[#333] lg:pe-24">{item.title}</h3>
+              <h3 className="lg:text-xl text-lg group text-[#333] ">{item.title}</h3>
             </div>
           ))}
         </div>

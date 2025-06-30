@@ -18,7 +18,7 @@ const OurOTAPartners = () => {
   return (
     <Section className="lg:py-16">
       <Container>
-        <h2 className="lg:text-5xl text-3xl font-semibold text-[#0A3A75] text-center lg:mb-16 mb-5">
+        <h2 className="md:text-4xl text-3xl font-semibold text-[#0A3A75] text-center lg:mb-16 mb-5">
           Our OTA Partners
         </h2>
         <Swiper

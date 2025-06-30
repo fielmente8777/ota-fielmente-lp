@@ -17,12 +17,12 @@ const Banner: React.FC = () => {
   return (
     <header className="max-w-[1600px] mx-auto  lg:pb-14 pb-10 lg:pt-7 bg-blue-sky rounded-b-3xl">
       <Container>
-        <div className="lg:grid lg:grid-cols-2 lg:gap-8 flex flex-col gap-4 max-md:pt-4">
+        <div className="lg:grid lg:grid-cols-8 lg:gap-8 flex flex-col gap-4 max-md:pt-4">
           {/* <div className="w-full col-span-1">
             <Image src={bannerImg} alt="object" width={412} height={365} />
           </div> */}
-          <div className="w-full flex justify-center lg:gap-14 gap-5 flex-col">
-            <h1 className="text-white lg:text-6xl text-3xl font-bold mb-4 max-md:text-center">
+          <div className="w-full flex justify-center lg:gap-14 gap-5 flex-col md:col-span-5 max-w-2xl">
+            <h1 className="text-white lg:text-6xl text-3xl font-semibold mb-4 max-md:text-center">
               Fielmente - Leading Online Revenue Management Company
             </h1>
             <div className="flex md:flex-row flex-col md:items-center md:gap-8 gap-3">
@@ -49,7 +49,7 @@ const Banner: React.FC = () => {
               Schedule Call
             </Link> */}
           </div>
-          <div className="w-full flex justify-end items-center">
+          <div className="w-full flex justify-end items-center md:col-span-3">
             <Form />
           </div>
         </div>

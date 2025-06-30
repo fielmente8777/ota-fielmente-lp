@@ -10,9 +10,9 @@ const RevenueServices = () => {
             Revenue Management Services
           </h2>
         </div>
-        <ul className="grid lg:grid-cols-4 grid-cols-1 lg:gap-8 gap-1 ps-8">
+        <ul className="grid lg:grid-cols-4 grid-cols-1 lg:gap-8 gap-1 ps-6">
           {data.map((item, index) => (
-            <li key={index} className="text-xl font-medium text-[#4F4F4F]  list-disc lg:pe-16">
+            <li key={index} className="text-lg font-medium text-[#4F4F4F]  list-disc">
               {item}
             </li>
           ))}

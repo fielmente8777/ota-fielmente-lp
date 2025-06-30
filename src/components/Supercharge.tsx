@@ -11,13 +11,13 @@ const Supercharge = () => {
           <div>
             <Image src={'/images/landingpage4/fast-charge.png'} alt="alt" width={58} height={58} />
           </div>
-          <h2 className="lg:text-5xl text-[1.5rem] text-black font-bold text-center">
+          <h2 className="md:text-4xl text-lg text-black font-semibold text-center">
             Let’s Supercharge your <br />{" "}
             <span className="text-blue-sky">Hotel Revenue</span>
           </h2>
         </div>
         <div className="flex flex-col bg-[#4f4f4f]/5 rounded-2xl lg:p-10 p-5 gap-4">
-          <h2 className="lg:text-3xl text-2xl text-black font-bold lg:mb-7 mb-5">
+          <h2 className="md:text-3xl text-2xl text-black font-semibold lg:mb-7 mb-5">
             We are the only Revenue Management Company with a team of <br className="lg:block hidden" />{" "}
             <span className="text-blue-sky">Industry Experts</span>
           </h2>

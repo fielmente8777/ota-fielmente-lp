@@ -8,7 +8,7 @@ const Workstructure = () => {
       <Container>
         <div className="max-w-6xl mx-auto shadow-md bg-[#F2F2F2]  rounded-2xl">
           <div className="lg:px-[3.75rem] lg:py-12 p-4">
-            <h2 className="lg:text-3xl text-xl text-black font-bold lg:mb-7 mb-5">
+            <h2 className="md:text-3xl text-xl text-black font-semibold lg:mb-7 mb-5">
               We work on{" "}
               <span className="text-orange-primary">fixed fee structure</span>{" "}
               only!
@@ -17,9 +17,9 @@ const Workstructure = () => {
               {data.map((item, index) => (
                 <li
                   key={index}
-                  className="flex items-center gap-3 text-lg line-through text-gray-primary "
+                  className="flex items-center gap-3  line-through text-gray-primary "
                 >
-                  <GreenCircleIcon /> {item}
+                  <span className=""><GreenCircleIcon /></span> {item}
                 </li>
               ))}
             </ul>

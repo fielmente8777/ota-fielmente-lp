@@ -5,8 +5,8 @@ import { CallOrangeIcon, MailIcon } from "@/icons/icons";
 import Image from "next/image";
 
 import { usePathname } from "next/navigation";
-const Navbar = () => {
-  const pathname = usePathname();
+const Header = () => {
+   const pathname = usePathname();
   return (
     <header className={`${pathname === "/thank-you/" ? "py-10 " : "lg:pt-14 pt-10"} max-w-[1600px] mx-auto bg-blue-sky`}>
       <Container>
@@ -46,7 +46,6 @@ const Navbar = () => {
       </Container>
     </header>
   );
-};
+}
 
-export default Navbar;
-
+export default Header;

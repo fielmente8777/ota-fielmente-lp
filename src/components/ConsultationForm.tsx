@@ -20,7 +20,7 @@ const ConsultationForm = () => {
         <div className="lg:grid grid-cols-3 gap-6 items-center" id="testimonials">
           <div className="col-span-2">
 
-            <div className="text-white text-4xl">
+            <div className="text-white text-3xl">
               <h2>
                 Client{" "}
                 <b className="text-orange-primary lg:block inline">
@@ -86,13 +86,13 @@ const Card = ({
               className="rounded-full border-8 border-white"
             /> */}
             <div className="flex flex-col gap-1">
-              <h3 className="text-black font-bold text-xl">{title}</h3>
+              <h3 className="text-black font-semibold text-lg">{title}</h3>
               {/* <span className="text-sm">CEO</span> */}
             </div>
           </div>
         </div>
         <div className="flex gap-4 items-center">
-          <p className="text-black text-lg">{subtitle}</p>
+          <p className="text-black">{subtitle}</p>
         </div>
       </div>
     </div>

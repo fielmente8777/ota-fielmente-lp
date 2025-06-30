@@ -1,14 +1,22 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Roboto, Poppins } from "next/font/google";
 import "./globals.scss";
-import Navbar from "@/components/Navbar";
-import Footer from "@/components/Footer";
+import Navbar from "@/components/navbar/Navbar";
+import Footer from "@/components/footer/Footer";
 import Script from "next/script";
 import Call from "@/components/Call";
 import Whatsapp from "@/components/WhatsApp";
 import Salesiq from "@/components/zohochatbot/Salesiq";
 
-const inter = Inter({ subsets: ["latin"] });
+const roboto = Roboto({
+  weight: ["400", "500", "700"],
+  subsets: ["latin"],
+});
+
+const poppins = Poppins({
+  weight: ["400", "500", "600", "700"],
+  subsets: ["latin"],
+});
 
 export const metadata: Metadata = {
   title: "Fielmente : Hotel Marketing Agency in India",
@@ -93,7 +101,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
           }}
         />
       </head>
-      <body className={inter.className} suppressHydrationWarning={true}>
+      <body className={`${roboto.className} ${poppins.className} antialiased`} suppressHydrationWarning={true}>
         {/* <!-- Google Tag Manager (noscript) --> */}
         <noscript>
           <iframe

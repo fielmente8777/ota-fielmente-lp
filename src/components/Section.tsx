@@ -1,16 +1,26 @@
-import React from "react";
-
-const Section = ({
-  children,
-  className,
-  id,
-}: {
-  children: React.ReactNode;
+interface SectionProps {
   className?: string;
-  id?:string
+  lgpy?: string;
+  py?: string;
+  children: React.ReactNode;
+  id?: string;
+  style?: React.CSSProperties;
+}
+
+const Section: React.FC<SectionProps> = ({
+  className = "",
+  lgpy,
+  py,
+  id,
+  children,
+  style = {},
 }) => {
   return (
-    <section className={`${className ? className : "lg:py-6"} py-6`} id={id}>
+    <section
+      className={`max_screen ${lgpy ? `lg:py-${lgpy}` : "md:py-16"} ${py ? `py-${py}` : "py-8"} ${className}`}
+      id={id}
+      style={style}
+    >
       {children}
     </section>
   );

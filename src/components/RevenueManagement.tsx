@@ -5,17 +5,17 @@ import Image, { StaticImageData } from "next/image";
 const RevenueManagement = () => {
   return (
     <Section className="lg:py-10">
-      <Container>
-        <h2 className="lg:text-5xl text-3xl text-blue-sky font-bold lg:mb-8 mb-5">
+      <Container className="space-y-8">
+        <h2 className="md:text-4xl text-3xl text-blue-sky font-semibold ">
           Revenue Management
         </h2>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
           {data.map((item, index) => (
             <div
               key={index}
-              className="flex flex-col group items-baseline gap-4 rounded-t-[3.1rem] overflow-hidden"
+              className="flex flex-col group gap-4 rounded-t-[3.1rem] overflow-hidden"
             >
-              <div className="relative w-full lg:h-[25rem] aspect-[4/2.43] overflow-hidden">
+              <div className="relative w-full md:h-[15rem] aspect-video overflow-hidden">
                 <Image
                   src={item.src}
                   alt="avatar"
@@ -25,7 +25,7 @@ const RevenueManagement = () => {
                 />
               </div>
               <div className="flex flex-col pb-5 gap-4 justify-between">
-                <h3 className="lg:text-3xl text-xl text-orange-primary capitalize font-bold">
+                <h3 className="md:text-2xl text-xl text-orange-primary capitalize font-semibold">
                   {item.title}
                 </h3>
                 <p className="text-gray-primary text-lg">{item.description}</p>
