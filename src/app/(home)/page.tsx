@@ -1,6 +1,5 @@
 import React from "react";
 import { Banner, Supercharge, WhatWeOffer, RevenueManagement, OurServices, RevenueServices, Workstructure, OurOTAPartners, ReadytoElevate, PopupForm, ConsultationForm } from "@/components";
-import Riview from "@/components/Riview";
 import MIleStonesNew from "@/components/MIleStonesNew";
 const page: React.FC = () => {
   return (
@@ -17,7 +16,6 @@ const page: React.FC = () => {
       <OurOTAPartners />
       {/* <ReadytoElevate /> */}
       <ConsultationForm />
-      <PopupForm />
     </>
   );
 };

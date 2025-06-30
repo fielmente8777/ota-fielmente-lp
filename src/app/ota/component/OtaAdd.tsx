@@ -25,7 +25,7 @@ const OtaAdd: React.FC<OtaAddType> = ({ title, subTitle, links }) => {
           ))}
         </div>
       </div>
-      <PopupForm setShowModal={setShow} showModal={show}/>
+     {show && <PopupForm setShowModal={setShow} showModal={show}/>}
     </SectionWithContainer>
   );
 };

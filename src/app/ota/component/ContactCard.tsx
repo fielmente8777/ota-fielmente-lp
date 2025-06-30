@@ -39,7 +39,7 @@ const ContactCard: React.FC<contactCardType> = ({ title, lists, links }) => {
           </div>
         </div>
       </div>
-      <PopupForm setShowModal={setShow} showModal={show} />
+      {show && <PopupForm setShowModal={setShow} showModal={show} />}
     </SectionWithContainer>
   );
 };

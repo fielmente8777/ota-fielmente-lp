@@ -10,11 +10,13 @@ import {
   TrustPiolet,
 } from "@/icons/icons";
 import Container from "../Container";
+import PopupForm from "../PopupForm";
+import { useState } from "react";
 
 const Footer1 = () => {
     const currentYear = new Date().getFullYear();
 
-
+  const [showModal, setShowModal] = useState(false);
   const aboutLinks = [
     {
       title: "Home",
@@ -177,6 +179,7 @@ const Footer1 = () => {
           </p>
         </div>
       </Container>
+      <PopupForm setShowModal={setShowModal} showModal={showModal} />
     </footer>
   );
 };

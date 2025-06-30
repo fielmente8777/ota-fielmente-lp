@@ -40,7 +40,7 @@ const Revenue: React.FC<RevenueProps> = ({
           <button onClick={() => setShow(true)} className="bg-orange-primary border border-orange-primary text-white text-lg py-4 px-6 rounded-lg w-fit hover:bg-white hover:text-orange-primary">{links[0].title}</button>
         </div>
       </div>
-       <PopupForm setShowModal={setShow} showModal={show} />
+      {show && <PopupForm setShowModal={setShow} showModal={show} />}
     </SectionWithContainer>
   );
 };

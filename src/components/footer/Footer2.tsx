@@ -1,3 +1,4 @@
+"use client";
 import {
   FillFacebook,
   FillInstagram,
@@ -10,6 +11,8 @@ import {
 import Container from "../Container";
 import Link from "next/link";
 import Image from "next/image";
+import PopupForm from "../PopupForm";
+import { useState } from "react";
 
 const Footer2 = () => {
   const currentYear = new Date().getFullYear();
@@ -72,6 +75,7 @@ const Footer2 = () => {
       ],
     },
   ];
+  const [showModal, setShowModal] = useState(false);
   return (
     <footer className="bg-blue-dark">
       <Container>
@@ -128,6 +132,7 @@ const Footer2 = () => {
           </p>
         </div>
       </Container>
+      <PopupForm setShowModal={setShowModal} showModal={showModal} />
     </footer>
   );
 };
