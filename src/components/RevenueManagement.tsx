@@ -47,26 +47,26 @@ const RevenueManagement = () => {
 export default RevenueManagement;
 
 interface cardDataType {
-  src: string | StaticImageData;
+  src: string ;
   title: string;
   description: string;
 }
 
 const data: cardDataType[] = [
   {
-    src: '/images/landingpage4/standard-quality-control.png',
+    src: '/images/landingpage4/standard.png',
     title: "Proven Expertise",
     description:
       "Our team brings extensive experience in revenue management, ensuring that your business capitalizes on every opportunity for growth.",
   },
   {
-    src: '/images/landingpage4/man-working.png',
+    src: '/images/landingpage4/man.png',
     title: "Data-Driven Strategies",
     description:
       "We employ sophisticated analytics to understand market trends, demand patterns, and customer behaviour, allowing us to tailor strategies that align with your business objectives.",
   },
   {
-    src: '/images/landingpage4/still-life.png',
+    src: '/images/landingpage4/still.png',
     title: "Customized Approach",
     description:
       "We employ sophisticated analytics to understand market trends, demand patterns, and customer behavior, allowing us to tailor strategies that align with your business objectives.",
