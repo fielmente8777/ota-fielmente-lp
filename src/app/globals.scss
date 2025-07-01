@@ -213,3 +213,19 @@ body::-webkit-scrollbar-track {
         border-radius: 0.5rem;
     }
 }
+
+.choose-pagination {
+    .swiper-pagination-bullet {
+        background-color: #110D3C;
+        inline-size: 0.5rem;
+        block-size: 0.5rem;
+        opacity: 1;
+        border-radius: 50%;
+        transition: all 0.3s ease-in-out;
+    }
+
+    .swiper-pagination-bullet-active {
+        width: 2rem;
+        border-radius: 0.5rem;
+    }
+}

@@ -9,7 +9,7 @@ const ContactCard: React.FC<contactCardType> = ({ title, lists, links }) => {
   return (
     <SectionWithContainer sectionClassName="bg-[#F5F5F5]">
       <div className="w-full rounded-3xl bg-[#F5F5F5] border border-orange-primary box-shadow2 px-4">
-        <div className="max-w-[65rem] mx-auto md:py-14 py-10">
+        <div className="max-w-[65rem] mx-auto md:py-14 py-6">
           <div className="grid md:grid-cols-5 grid-cols-1 gap-8">
             <div className="md:col-span-3 col-span-1 space-y-6">
               <h2
@@ -27,11 +27,11 @@ const ContactCard: React.FC<contactCardType> = ({ title, lists, links }) => {
                 ))}
               </ul>
             </div>
-            <div className="md:col-span-2 col-span-1 flex items-center md:justify-end justify-center">
+            <div className="md:col-span-2 col-span-1 flex items-center md:justify-center">
               <button
                 type="button"
                 onClick={() => setShow(true)}
-                className="flex items-center gap-4 bg-orange-primary text-white text-lg py-4 px-6 rounded-lg w-fit"
+                className="flex items-center gap-4 bg-orange-primary text-white text-lg md:py-4 py-3 px-6 rounded-lg w-fit"
               >
                 {links[0].title}
               </button>

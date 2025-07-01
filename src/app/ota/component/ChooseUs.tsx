@@ -1,13 +1,14 @@
+"use client";
 import { ChooseUsType } from "@/@type/@type";
-import { ChooseUsCard } from "@/components";
+import { ChooseUsCard, SwiperCarousel } from "@/components";
 import SectionWithContainer from "@/components/SectionWithContainer";
-
+import { Autoplay, Pagination } from "swiper/modules";
 
 const ChooseUs: React.FC<ChooseUsType> = ({ title, subTitle, cards }) => {
   return (
     <SectionWithContainer sectionClassName="bg-[#F5F5F5]">
       <div className="flex flex-col items-center md:gap-8 gap-4">
-        <div className="max-w-[44rem] mx-auto text-center space-y-2 poppins">
+        <div className="md:max-w-[44rem] w-full mx-auto text-center space-y-2 poppins">
           <h2 className="bg-[#FFE7DE] uppercase text-orange-primary text-sm rounded-full px-4 w-fit mx-auto py-2">
             {title}
           </h2>
@@ -17,10 +18,36 @@ const ChooseUs: React.FC<ChooseUsType> = ({ title, subTitle, cards }) => {
             dangerouslySetInnerHTML={{ __html: subTitle }}
           />
         </div>
-        <div className="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 md:gap-6 gap-4">
-          {cards.map((item,index)=>(
+        <div className="lg:grid hidden grid-cols-3 md:gap-6">
+          {cards.map((item, index) => (
             <ChooseUsCard key={index} {...item} index={index} />
           ))}
+        </div>
+        <div className="w-full space-y-6">
+          <SwiperCarousel
+            data={cards}
+            speed={2000}
+            className=""
+            autoplay={{ delay: 2000 }}
+            loop={true}
+            modules={[Pagination, Autoplay]}
+            pagination={{
+              clickable: true,
+              el: ".choose-pagination",
+            }}
+            slidesPerView={1}
+            spaceBetween={24}
+            breakpoints={{
+              768: {
+                slidesPerView: 3,
+                spaceBetween: 48,
+              },
+            }}
+            renderSlide={(item, index) => (
+              <ChooseUsCard key={index} {...item} index={index} />
+            )}
+          />
+          <div className="choose-pagination flex items-center justify-center"></div>
         </div>
       </div>
     </SectionWithContainer>

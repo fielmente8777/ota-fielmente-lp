@@ -28,16 +28,21 @@ const Revenue: React.FC<RevenueProps> = ({
         <div className="relative w-full aspect-[4/3.5] md:block hidden">
           <Image src={image} alt={title} fill className="object-contain" />
         </div>
-        <div className="max-w-xl flex flex-col gap-6 max-md:justify-center max-md:items-center w-full">
-          <span className="">{icon}</span>
+        <div className="max-w-xl flex flex-col gap-6 w-full">
+          <span className="max-md:mx-auto">{icon}</span>
           <h2 className="md:text-[2.5rem]/[3rem] text-2xl font-semibold bg-clip-text text-transparent bg-gradient-to-r from-blue-dark to-orange-primary max-md:text-center">
             {title}
           </h2>
           <div className="relative w-full aspect-[4/3.5] md:hidden">
-          <Image src={image} alt={title} fill className="object-contain" />
-        </div>
+            <Image src={image} alt={title} fill className="object-contain" />
+          </div>
           <p className="md:text-lg text-[#6F6F6F]">{description}</p>
-          <button onClick={() => setShow(true)} className="bg-orange-primary border border-orange-primary text-white text-lg py-4 px-6 rounded-lg w-fit hover:bg-white hover:text-orange-primary">{links[0].title}</button>
+          <button
+            onClick={() => setShow(true)}
+            className="bg-orange-primary border border-orange-primary text-white text-lg md:py-4 py-3 px-6 rounded-lg w-fit hover:bg-white hover:text-orange-primary"
+          >
+            {links[0].title}
+          </button>
         </div>
       </div>
       {show && <PopupForm setShowModal={setShow} showModal={show} />}
