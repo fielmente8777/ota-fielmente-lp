@@ -10,7 +10,7 @@ import { Autoplay, FreeMode } from "swiper/modules";
 
 const OurClients: React.FC<OurClientProps> = ({ clients, subTitle, title }) => {
   return (
-    <Section className="bg-[#F5F5F5]">
+    <Section className="bg-[#FFF] !pb-0">
       <div className="max-w-5xl mx-auto text-center space-y-3">
         <h2 className="bg-[#FFE7DE] text-blue-dark text-sm rounded-full px-4 w-fit mx-auto py-2 poppins">
           {title}

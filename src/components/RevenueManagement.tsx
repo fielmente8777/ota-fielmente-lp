@@ -15,7 +15,7 @@ const RevenueManagement = () => {
               key={index}
               className="flex flex-col group gap-4 rounded-t-[3.1rem] overflow-hidden"
             >
-              <div className="relative w-full md:h-[15rem] aspect-video overflow-hidden">
+              <div className="relative w-full md:h-[15rem] md:aspect-video aspect-[4/2.5] overflow-hidden">
                 <Image
                   src={item.src}
                   alt="avatar"

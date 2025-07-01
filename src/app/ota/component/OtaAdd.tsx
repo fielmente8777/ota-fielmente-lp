@@ -7,7 +7,7 @@ import { useState } from "react";
 const OtaAdd: React.FC<OtaAddType> = ({ title, subTitle, links }) => {
   const [show, setShow] = useState(false);
   return (
-    <SectionWithContainer sectionClassName="bg-[#F5F5F5] !pt-0">
+    <SectionWithContainer sectionClassName="bg-[#F5F5F5]">
       <div className="w-full max-w-lg mx-auto text-center space-y-6">
         <h2 className="text-3xl md:text-[40px]/[48px] font-bold bg-clip-text text-transparent bg-gradient-to-r from-blue-dark to-orange-primary">
           {title}

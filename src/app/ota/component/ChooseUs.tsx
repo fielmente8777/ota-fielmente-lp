@@ -6,7 +6,7 @@ import { Autoplay, Pagination } from "swiper/modules";
 
 const ChooseUs: React.FC<ChooseUsType> = ({ title, subTitle, cards }) => {
   return (
-    <SectionWithContainer sectionClassName="bg-[#F5F5F5]">
+    <SectionWithContainer sectionClassName="bg-[#FFF]">
       <div className="flex flex-col items-center md:gap-8 gap-4">
         <div className="md:max-w-[44rem] w-full mx-auto text-center space-y-2 poppins">
           <h2 className="bg-[#FFE7DE] uppercase text-orange-primary text-sm rounded-full px-4 w-fit mx-auto py-2">

@@ -20,7 +20,7 @@ const CountiesWeWorked = ({
   cards: items,
 }: CountiesWeWorkedProps) => {
   return (
-    <Section className="bg-[#F5F5F5]">
+    <Section className="bg-[#FFF]">
       <div className="grid lg:grid-cols-11 grid-cols-1 items-center gap-1">
         <div className="lg:col-span-4 col-span-1 lg:rounded-r-[24px] md:rounded-none rounded-b-3xl bg-orange-primary md:py-12 md:px-9 max-md:p-8">
           <div className="max-w-[365px] space-y-4 poppins md:ml-auto">

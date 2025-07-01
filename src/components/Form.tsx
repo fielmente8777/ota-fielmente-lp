@@ -169,7 +169,7 @@ const Form = () => {
   return (
     <form
       onSubmit={handleSubmit}
-      className="flex flex-col gap-4 max-md:p-4 px-4 py-6  rounded-xl w-full bg-[#F5F5F5]"
+      className="flex flex-col gap-2 max-md:p-4 px-4 py-6  rounded-xl w-full bg-[#FFFFFF]"
       noValidate
     >
       <h2 className="text-2xl  font-semibold text-blue-dark">

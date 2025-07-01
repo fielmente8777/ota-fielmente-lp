@@ -39,7 +39,7 @@ const Revenue: React.FC<RevenueProps> = ({
           <p className="md:text-lg text-[#6F6F6F]">{description}</p>
           <button
             onClick={() => setShow(true)}
-            className="bg-orange-primary border border-orange-primary text-white text-lg md:py-4 py-3 px-6 rounded-lg w-fit hover:bg-white hover:text-orange-primary border border-orange-primary hover:scale-x-95 transition-all duration-300 ease-in-out active:scale-100"
+            className="bg-orange-primary text-white text-lg md:py-4 py-3 px-6 rounded-lg w-fit hover:bg-white hover:text-orange-primary border border-orange-primary hover:scale-95 transition-all duration-300 ease-in-out active:scale-100"
           >
             {links[0].title}
           </button>
