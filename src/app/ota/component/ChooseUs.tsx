@@ -23,7 +23,7 @@ const ChooseUs: React.FC<ChooseUsType> = ({ title, subTitle, cards }) => {
             <ChooseUsCard key={index} {...item} index={index} />
           ))}
         </div>
-        <div className="w-full space-y-6">
+        <div className="w-full space-y-6 lg:hidden block">
           <SwiperCarousel
             data={cards}
             speed={2000}

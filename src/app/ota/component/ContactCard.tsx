@@ -27,7 +27,7 @@ const ContactCard: React.FC<contactCardType> = ({ title, lists, links }) => {
                 ))}
               </ul>
             </div>
-            <div className="md:col-span-2 col-span-1 flex items-center md:justify-center">
+            <div className="md:col-span-2 col-span-1 flex items-center md:justify-end">
               <button
                 type="button"
                 onClick={() => setShow(true)}

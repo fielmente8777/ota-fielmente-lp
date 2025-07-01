@@ -19,7 +19,7 @@ const Banner2: React.FC<bannerType> = ({ title, list, images }) => {
       <div className="bg-blue-dark w-full lg:py-14 max-md:pt-10 flex items-center justify-center">
         <Container>
           <div className="grid lg:grid-cols-12  gap-8 text-white items-center poppins">
-            <div className="lg:col-span-8 col-span-1 space-y-8 max-w-2xl">
+            <div className="lg:col-span-7 col-span-1 space-y-8 max-w-2xl">
               <h1
                 className="md:text-[3.5rem]/tight text-color text-[2.5rem]/tight max-md:w-[90%] w-full"
                 dangerouslySetInnerHTML={{ __html: title }}
@@ -50,7 +50,7 @@ const Banner2: React.FC<bannerType> = ({ title, list, images }) => {
               </div>
             </div>
 
-            <div className="lg:col-span-4 w-full">
+            <div className="lg:col-span-5 w-full">
               <Form />
             </div>
           </div>

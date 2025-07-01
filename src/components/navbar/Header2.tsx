@@ -19,7 +19,7 @@ const Header2 = () => {
   return (
     <header className="max_screen">
       <Container>
-        <nav className="flex justify-between items-center py-2">
+        <nav className="flex justify-between items-center md:py-4 py-2">
           <button className="relative h-[65px] aspect-[4/1.9]">
             <Image
               src="/images/logo.webp"
@@ -34,10 +34,10 @@ const Header2 = () => {
               <li key={index}>
                 <Link
                   href={link.href}
-                  className={`flex items-center gap-4 ${index === 0? "text-[#363636]": "text-orange-primary"} text-lg poppins md:px-5 px-3 md:py-4 py-2`}
+                  className={`flex items-center gap-4 ${index === 0? "text-[#363636]": "text-orange-primary group border border-orange-primary rounded-lg hover:bg-orange-primary hover:text-white"} text-lg poppins md:px-5 px-3 md:py-4 py-2`}
                 >
                   <span className="sr-only">{link.name}</span>
-                  <span className="text-orange-primary">{link.icon}</span>
+                  <span className="text-orange-primary group-hover:text-white">{link.icon}</span>
                   <span className="md:block hidden">{link.name}</span>
                 </Link>
               </li>
