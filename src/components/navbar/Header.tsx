@@ -8,7 +8,7 @@ import { usePathname } from "next/navigation";
 const Header = () => {
    const pathname = usePathname();
   return (
-    <header className={`${pathname === "/thank-you/" ? "py-10 " : "lg:pt-14 pt-10"} max-w-[1600px] mx-auto bg-blue-sky`}>
+    <header className={`${pathname === "/thank-you/" ? "py-10" : "pt-4"} max-w-[1600px] mx-auto bg-blue-sky`}>
       <Container>
         <nav className="flex justify-between items-center">
           <div className="relative h-[81px] lg:mx-0 mx-auto aspect-[4/2.1]">

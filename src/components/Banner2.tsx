@@ -38,7 +38,7 @@ const Banner2: React.FC<bannerType> = ({ title, list, images }) => {
               <div className="bg-[linear-gradient(to_right,_#110D3C,_#FFFFFF,_#110D3C)] h-[1px] w-full" />
               <div className="flex items-center justify-between gap-4 mt-4">
                 {images.map((item, index) => (
-                  <div key={index} className="h-7 relative aspect-[4/1.5] md:aspect-[4/.8]">
+                  <div key={index} className="h-7 relative aspect-[4/1.12] md:aspect-[4/.8]">
                     <Image
                       src={item.src}
                       alt={item.alt}

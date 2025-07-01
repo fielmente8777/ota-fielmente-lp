@@ -31,7 +31,7 @@ const ContactCard: React.FC<contactCardType> = ({ title, lists, links }) => {
               <button
                 type="button"
                 onClick={() => setShow(true)}
-                className="flex items-center gap-4 bg-orange-primary text-white text-lg md:py-4 py-3 px-6 rounded-lg w-fit"
+                className="flex items-center gap-4 bg-orange-primary text-white hover:bg-white hover:text-orange-primary border border-orange-primary hover:scale-x-95 transition-all duration-300 ease-in-out active:scale-100 text-lg md:py-4 py-3 px-6 rounded-lg w-fit"
               >
                 {links[0].title}
               </button>

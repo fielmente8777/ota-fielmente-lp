@@ -132,7 +132,7 @@ export const newPagedata = {
         icon: <ProvenExpertise />,
         title: "Proven Expertise",
         description:
-          "Our team brings extensive experience in revenue management, ensuring that your business capitalizes on every opportunity for growth with precision, insight, efficiency, and measurable impact.",
+          "Our team brings extensive experience in revenue management, ensuring that your business capitalizes on every opportunity for growth with precision, and measurable impact.",
       },
       {
         icon: <DataDriven />,

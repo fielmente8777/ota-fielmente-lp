@@ -7,7 +7,7 @@ import { useState } from "react";
 const OtaAdd: React.FC<OtaAddType> = ({ title, subTitle, links }) => {
   const [show, setShow] = useState(false);
   return (
-    <SectionWithContainer sectionClassName="bg-[#F5F5F5]">
+    <SectionWithContainer sectionClassName="bg-[#F5F5F5] !pt-0">
       <div className="w-full max-w-lg mx-auto text-center space-y-6">
         <h2 className="text-3xl md:text-[40px]/[48px] font-bold bg-clip-text text-transparent bg-gradient-to-r from-blue-dark to-orange-primary">
           {title}
@@ -18,7 +18,7 @@ const OtaAdd: React.FC<OtaAddType> = ({ title, subTitle, links }) => {
             <button
               onClick={() => setShow(true)}
               key={index}
-              className="flex items-center gap-2 bg-orange-primary text-white text-lg md:py-4 py-3 px-6 rounded-lg w-fit"
+              className="flex items-center gap-2 bg-orange-primary text-white text-lg md:py-4 py-3 px-6 rounded-lg w-fit hover:bg-white hover:text-orange-primary border border-orange-primary hover:scale-x-95 transition-all duration-300 ease-in-out active:scale-100"
             >
               {item.title}
             </button>

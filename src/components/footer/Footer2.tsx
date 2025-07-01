@@ -99,7 +99,7 @@ const Footer2 = () => {
                   <li key={linkIndex}>
                     <Link
                       href={link.href}
-                      className="text-white hover:text-orange-primary flex  gap-2 text-base"
+                      className="text-white md:hover:text-orange-primary flex  gap-2 text-base"
                     >
                       <span
                         className={

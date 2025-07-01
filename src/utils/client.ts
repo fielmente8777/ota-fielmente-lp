@@ -101,6 +101,7 @@ export const ClientImages: ClientData[] = [
   {
     src: '/images/wabi-sabi.jpg',
     alt: "Client22",
+    className: "#F7F7F7",
   },
   {
     src: '/images/ebc.jpg',
@@ -252,6 +253,7 @@ export const ClientImages: ClientData[] = [
   {
     src: "/clientsLogo/petal-panyaram.png",
     alt: "Client57",
+    className: "#15533C",
   },
   {
     src: "/clientsLogo/7Mile.png",
