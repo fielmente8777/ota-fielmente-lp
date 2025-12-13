@@ -15,7 +15,7 @@ interface bannerType {
 
 const Banner2: React.FC<bannerType> = ({ title, list, images }) => {
   return (
-    <Section className="!p-0">
+    <Section className="!p-0 overflow-hidden">
       <div className="bg-blue-dark w-full lg:py-14 max-md:pt-10 flex items-center justify-center">
         <Container>
           <div className="grid lg:grid-cols-12  gap-8 text-white items-center poppins">

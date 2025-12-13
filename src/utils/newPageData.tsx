@@ -18,9 +18,8 @@ import {
   REVENUEMANAGEMENT,
   TailoredStrategy,
 } from "@/icons/icons";
-import { ClientImages } from "./client";
 import { CheckIcon, MONTHLYMEETING } from '../icons/icons';
-import { RevenueManagement } from "@/components";
+import { ClientImages } from "./client";
 
 export const newPagedata = {
   bannerData: {
@@ -178,7 +177,7 @@ export const newPagedata = {
     cards: [
       {
         src: "/flags/dubai.png",
-        alt: "dubai",
+        alt: "UAE",
       },
       {
         src: "/flags/uk.png",

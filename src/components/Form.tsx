@@ -3,7 +3,7 @@ import { useRouter } from "next/navigation";
 import axios from "axios";
 import React, { useState } from "react";
 import { countries } from "@/utils/countryCode";
-import { FillUser, FillPhone, FillMail, FillMessage } from '@/icons/icons';
+import { FillUser, FillPhone, FillMail, FillMessage } from "@/icons/icons";
 
 const Form = () => {
   const router = useRouter();
@@ -22,26 +22,28 @@ const Form = () => {
 
   const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
     const { name, value } = e.target;
-    setFormData(prev => ({ ...prev, [name]: value }));
-    
+    setFormData((prev) => ({ ...prev, [name]: value }));
+
     // Clear error when user types
     if (name === "userEmail" && errors.email) {
-      setErrors(prev => ({ ...prev, email: "" }));
+      setErrors((prev) => ({ ...prev, email: "" }));
     }
     if (name === "userPhone" && errors.phone) {
-      setErrors(prev => ({ ...prev, phone: "" }));
+      setErrors((prev) => ({ ...prev, phone: "" }));
     }
   };
 
   const handlePhoneChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const value = e.target.value.replace(/\D/g, "");
     if (value.length <= 10) {
-      setFormData(prev => ({ ...prev, userPhone: value }));
-      setErrors(prev => ({
+      setFormData((prev) => ({ ...prev, userPhone: value }));
+      setErrors((prev) => ({
         ...prev,
-        phone: value.length < 10 ? "Please enter a valid number" : ""
+        phone: value.length < 10 ? "Please enter a valid number" : "",
       }));
     }
   };
@@ -66,15 +68,21 @@ const Form = () => {
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    
+
     if (!validateForm()) return;
 
     setIsSubmitting(true);
 
     try {
-      const response = await axios.post(
+      const { data } = await axios.post(
         `https://www.privyr.com/api/v1/incoming-leads/0vZfjMQw/7lHAUjtz#generic-webhook`,
+        // `https://nexon.eazotel.com/eazotel/addcontacts`,
         {
+          // Domain: "fielmente",
+          // email: formData.userEmail,
+          // Name: formData.userName,
+          // Contact: `${countryCode}${formData.userPhone}`,
+          // Description: formData.userMessage,
           email: formData.userEmail,
           name: formData.userName,
           phone: `${countryCode}${formData.userPhone}`,
@@ -86,8 +94,9 @@ const Form = () => {
           },
         }
       );
-
-      if (response.data.success) {
+      console.log("API Response:", data);
+      // if (data.Status)
+      if (data.success) {
         // Reset form
         setFormData({
           userName: "",
