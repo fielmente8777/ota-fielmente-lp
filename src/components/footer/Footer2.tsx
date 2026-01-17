@@ -51,12 +51,12 @@ const Footer2 = () => {
           href: "#",
           icon: <FillLocationIcon />,
         },
-        {
-          title:
-            "Ground Floor, Plot No. 21 & 21A, Sector 142, Noida, Uttar Pradesh 201304",
-          href: "#",
-          icon: <FillLocationIcon />,
-        },
+        // {
+        //   title:
+        //     "Ground Floor, Plot No. 21 & 21A, Sector 142, Noida, Uttar Pradesh 201304",
+        //   href: "#",
+        //   icon: <FillLocationIcon />,
+        // },
       ],
     },
     {
