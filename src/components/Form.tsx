@@ -1,6 +1,7 @@
 "use client";
 import { useRouter } from "next/navigation";
 import axios from "axios";
+import { markLeadSubmitted } from "@/lib/leadPrompt";
 import React, { useState } from "react";
 import { countries } from "@/utils/countryCode";
 import { FillUser, FillPhone, FillMail, FillMessage } from "@/icons/icons";
@@ -97,6 +98,7 @@ const Form = () => {
       console.log("API Response:", data);
       // if (data.Status)
       if (data.success) {
+        markLeadSubmitted();
         // Reset form
         setFormData({
           userName: "",

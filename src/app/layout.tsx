@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import GlobalLeadPopup from "@/components/GlobalLeadPopup";
 import { Roboto, Poppins } from "next/font/google";
 import "./globals.scss";
 import Navbar from "@/components/navbar/Navbar";
@@ -116,6 +117,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         {children}
         <Footer />
         <Whatsapp />
+        <GlobalLeadPopup />
       </body>
     </html>
   );
