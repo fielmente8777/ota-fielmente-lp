@@ -19,19 +19,19 @@ const poppins = Poppins({
 });
 
 export const metadata: Metadata = {
-  title: "Fielmente : Hotel Marketing Agency in India",
+  title: "Hotel OTA & Revenue Management | Fielmente",
   description:
-    "Best marketing agency in India for hotels, resorts and restaurant",
+    "OTA management and revenue marketing for hotels and resorts worldwide. Grow visibility, occupancy and direct bookings with Fielmente.",
   keywords:
-    "hotel marketing agency, hotel marketing agency in India, Ota hotel marketing agency,",
+    "hotel marketing agency, international hotel marketing agency, Ota hotel marketing agency,",
   authors: [{ name: "Fielmente", url: "https://ota.fielmente.com/" }],
   alternates: {
     canonical: "https://ota.fielmente.com/",
   },
   openGraph: {
-    title: "Fielmente : Hotel Marketing Agency in India",
+    title: "Hotel OTA & Revenue Management | Fielmente",
     description:
-      "Best marketing agency in India for hotels, resorts and restaurant",
+      "OTA management and revenue marketing for hotels and resorts worldwide. Grow visibility, occupancy and direct bookings with Fielmente.",
     url: "https://ota.fielmente.com/",
     images: [
       {
