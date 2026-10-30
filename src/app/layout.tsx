@@ -4,7 +4,6 @@ import "./globals.scss";
 import Navbar from "@/components/navbar/Navbar";
 import Footer from "@/components/footer/Footer";
 import Script from "next/script";
-import Call from "@/components/Call";
 import Whatsapp from "@/components/WhatsApp";
 import Salesiq from "@/components/zohochatbot/Salesiq";
 
@@ -116,7 +115,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         <Navbar />
         {children}
         <Footer />
-        <Call />
         <Whatsapp />
       </body>
     </html>
