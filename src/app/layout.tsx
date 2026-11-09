@@ -27,6 +27,11 @@ export const metadata: Metadata = {
   alternates: {
     canonical: "https://ota.fielmente.com/",
   },
+  // Paid-ads landing page: kept live for campaigns, kept out of Google. Its title targets "hotel marketing
+  // agency in India", the same search fielmente.com's home page ranks for, so with both indexed Google kept
+  // swapping them and fielmente.com's visibility swung. Google Ads ignores noindex, so ads keep running.
+  // Titles and copy are unchanged on purpose.
+  robots: { index: false, follow: true, googleBot: { index: false, follow: true } },
   openGraph: {
     title: "Fielmente : Hotel Marketing Agency in India",
     description:

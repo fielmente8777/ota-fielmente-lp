@@ -1,5 +1,5 @@
 User-agent: *
+# Crawling stays allowed so Google can see the noindex on every page. This is a paid-ads landing page;
+# the page meant to rank in search is https://fielmente.com/.
 Allow: /
 Disallow: /api/
-
-Sitemap: https://ota.fielmente.com/sitemap.xml
