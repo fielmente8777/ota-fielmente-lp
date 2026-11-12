@@ -6,6 +6,7 @@ import Navbar from "@/components/navbar/Navbar";
 import Footer from "@/components/footer/Footer";
 import Script from "next/script";
 import Whatsapp from "@/components/WhatsApp";
+import Salesiq from "@/components/zohochatbot/Salesiq";
 
 const roboto = Roboto({
   weight: ["400", "500", "700"],
@@ -57,6 +58,7 @@ export default function RootLayout({
           name="google-site-verification"
           content="vKQyk75wG0kfB4x60GCRAmVeErtPS9rgcM9-YNRAvLw"
         />
+        <Salesiq />
         <Script id="clarity-script" strategy="afterInteractive">
           {`
             (function(c,l,a,r,i,t,y){
