@@ -1,6 +1,7 @@
 import React from "react";
 import { Banner, Supercharge, WhatWeOffer, RevenueManagement, OurServices, RevenueServices, Workstructure, OurOTAPartners, ReadytoElevate, PopupForm, ConsultationForm } from "@/components";
 import MIleStonesNew from "@/components/MIleStonesNew";
+import EazotelAppCTA from "@/components/EazotelAppCTA";
 const page: React.FC = () => {
   return (
     <>
@@ -15,6 +16,7 @@ const page: React.FC = () => {
       {/* <Riview /> */}
       <OurOTAPartners />
       {/* <ReadytoElevate /> */}
+      <EazotelAppCTA />
       <ConsultationForm />
     </>
   );
