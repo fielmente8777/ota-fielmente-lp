@@ -9,6 +9,7 @@ import {
   RevenueManagementServices,
 } from "./component";
 import { OurClients } from "@/components";
+import EazotelAppCTA from "@/components/EazotelAppCTA";
 
 const page = () => {
   return (
@@ -20,6 +21,7 @@ const page = () => {
       <ContactCard {...newPagedata.contactCard} />
       <CountiesWeWorked {...newPagedata.countriesWeWorkedWith} />
       <OurClients {...newPagedata.ourClients} />
+      <EazotelAppCTA />
       <OtaAdd {...newPagedata.otaAdd} />
     </main>
   );
